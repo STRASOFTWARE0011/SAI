@@ -1,0 +1,3727 @@
+Index: app/src/main/res/drawable/ic_launcher_foreground.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_launcher_foreground.xml b/app/src/main/res/drawable/ic_launcher_foreground.xml
+new file mode 100644
+--- /dev/null	(date 1713125817171)
++++ b/app/src/main/res/drawable/ic_launcher_foreground.xml	(date 1713125817171)
+@@ -0,0 +1,30 @@
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:aapt="http://schemas.android.com/aapt"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
++        <aapt:attr name="android:fillColor">
++            <gradient
++                android:endX="85.84757"
++                android:endY="92.4963"
++                android:startX="42.9492"
++                android:startY="49.59793"
++                android:type="linear">
++                <item
++                    android:color="#44000000"
++                    android:offset="0.0" />
++                <item
++                    android:color="#00000000"
++                    android:offset="1.0" />
++            </gradient>
++        </aapt:attr>
++    </path>
++    <path
++        android:fillColor="#FFFFFF"
++        android:fillType="nonZero"
++        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
++        android:strokeWidth="1"
++        android:strokeColor="#00000000" />
++</vector>
+\ No newline at end of file
+Index: app/build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle.kts b/app/build.gradle.kts
+new file mode 100644
+--- /dev/null	(date 1715704563454)
++++ b/app/build.gradle.kts	(date 1715704563454)
+@@ -0,0 +1,46 @@
++plugins {
++    alias(libs.plugins.androidApplication)
++}
++
++android {
++    namespace = "com.example.sa"
++    compileSdk = 34
++
++    defaultConfig {
++        applicationId = "com.example.sa"
++        minSdk = 24
++        targetSdk = 34
++        versionCode = 1
++        versionName = "1.0"
++
++        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
++    }
++
++    buildTypes {
++        release {
++            isMinifyEnabled = false
++            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
++        }
++    }
++    compileOptions {
++        sourceCompatibility = JavaVersion.VERSION_1_8
++        targetCompatibility = JavaVersion.VERSION_1_8
++    }
++    buildFeatures {
++        viewBinding = true
++    }
++}
++
++dependencies {
++
++    implementation(libs.appcompat)
++    implementation(libs.material)
++    implementation(libs.activity)
++    implementation(libs.constraintlayout)
++    implementation(libs.navigation.fragment)
++    implementation(libs.navigation.ui)
++    testImplementation(libs.junit)
++    androidTestImplementation(libs.ext.junit)
++    androidTestImplementation(libs.espresso.core)
++
++}
+\ No newline at end of file
+Index: settings.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings.gradle.kts b/settings.gradle.kts
+new file mode 100644
+--- /dev/null	(date 1713125809282)
++++ b/settings.gradle.kts	(date 1713125809282)
+@@ -0,0 +1,24 @@
++pluginManagement {
++    repositories {
++        google {
++            content {
++                includeGroupByRegex("com\\.android.*")
++                includeGroupByRegex("com\\.google.*")
++                includeGroupByRegex("androidx.*")
++            }
++        }
++        mavenCentral()
++        gradlePluginPortal()
++    }
++}
++dependencyResolutionManagement {
++    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
++    repositories {
++        google()
++        mavenCentral()
++    }
++}
++
++rootProject.name = "SAİ"
++include(":app")
++ 
+\ No newline at end of file
+Index: build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle.kts b/build.gradle.kts
+new file mode 100644
+--- /dev/null	(date 1713125810415)
++++ b/build.gradle.kts	(date 1713125810415)
+@@ -0,0 +1,4 @@
++// Top-level build file where you can add configuration options common to all sub-projects/modules.
++plugins {
++    alias(libs.plugins.androidApplication) apply false
++}
+\ No newline at end of file
+Index: app/src/main/res/values-v23/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-v23/themes.xml b/app/src/main/res/values-v23/themes.xml
+new file mode 100644
+--- /dev/null	(date 1716371196392)
++++ b/app/src/main/res/values-v23/themes.xml	(date 1716371196392)
+@@ -0,0 +1,9 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++
++    <style name="Theme.SAİ" parent="Base.Theme.SAİ">
++        <!-- Transparent system bars for edge-to-edge. -->
++        <item name="android:navigationBarColor">@android:color/transparent</item>
++        <item name="android:statusBarColor">@android:color/transparent</item>
++        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
++    </style>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/navigation/nav_graph4.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/navigation/nav_graph4.xml b/app/src/main/res/navigation/nav_graph4.xml
+new file mode 100644
+--- /dev/null	(date 1716371198458)
++++ b/app/src/main/res/navigation/nav_graph4.xml	(date 1716371198458)
+@@ -0,0 +1,28 @@
++<?xml version="1.0" encoding="utf-8"?>
++<navigation xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/nav_graph4"
++    app:startDestination="@id/FirstFragment">
++
++    <fragment
++        android:id="@+id/FirstFragment"
++        android:name="com.example.sa.FirstFragment"
++        android:label="@string/first_fragment_label"
++        tools:layout="@layout/fragment_first">
++
++        <action
++            android:id="@+id/action_FirstFragment_to_SecondFragment"
++            app:destination="@id/SecondFragment" />
++    </fragment>
++    <fragment
++        android:id="@+id/SecondFragment"
++        android:name="com.example.sa.SecondFragment"
++        android:label="@string/second_fragment_label"
++        tools:layout="@layout/fragment_second">
++
++        <action
++            android:id="@+id/action_SecondFragment_to_FirstFragment"
++            app:destination="@id/FirstFragment" />
++    </fragment>
++</navigation>
+\ No newline at end of file
+Index: app/src/main/res/navigation/nav_graph2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/navigation/nav_graph2.xml b/app/src/main/res/navigation/nav_graph2.xml
+new file mode 100644
+--- /dev/null	(date 1715144766063)
++++ b/app/src/main/res/navigation/nav_graph2.xml	(date 1715144766063)
+@@ -0,0 +1,28 @@
++<?xml version="1.0" encoding="utf-8"?>
++<navigation xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/nav_graph2"
++    app:startDestination="@id/FirstFragment">
++
++    <fragment
++        android:id="@+id/FirstFragment"
++        android:name="com.example.sa.FirstFragment"
++        android:label="@string/first_fragment_label"
++        tools:layout="@layout/fragment_first">
++
++        <action
++            android:id="@+id/action_FirstFragment_to_SecondFragment"
++            app:destination="@id/SecondFragment" />
++    </fragment>
++    <fragment
++        android:id="@+id/SecondFragment"
++        android:name="com.example.sa.SecondFragment"
++        android:label="@string/second_fragment_label"
++        tools:layout="@layout/fragment_second">
++
++        <action
++            android:id="@+id/action_SecondFragment_to_FirstFragment"
++            app:destination="@id/FirstFragment" />
++    </fragment>
++</navigation>
+\ No newline at end of file
+Index: app/src/main/res/navigation/nav_graph3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/navigation/nav_graph3.xml b/app/src/main/res/navigation/nav_graph3.xml
+new file mode 100644
+--- /dev/null	(date 1716152883685)
++++ b/app/src/main/res/navigation/nav_graph3.xml	(date 1716152883685)
+@@ -0,0 +1,28 @@
++<?xml version="1.0" encoding="utf-8"?>
++<navigation xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/nav_graph3"
++    app:startDestination="@id/FirstFragment">
++
++    <fragment
++        android:id="@+id/FirstFragment"
++        android:name="com.example.sa.FirstFragment"
++        android:label="@string/first_fragment_label"
++        tools:layout="@layout/fragment_first">
++
++        <action
++            android:id="@+id/action_FirstFragment_to_SecondFragment"
++            app:destination="@id/SecondFragment" />
++    </fragment>
++    <fragment
++        android:id="@+id/SecondFragment"
++        android:name="com.example.sa.SecondFragment"
++        android:label="@string/second_fragment_label"
++        tools:layout="@layout/fragment_second">
++
++        <action
++            android:id="@+id/action_SecondFragment_to_FirstFragment"
++            app:destination="@id/FirstFragment" />
++    </fragment>
++</navigation>
+\ No newline at end of file
+Index: app/src/main/res/values-night/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-night/themes.xml b/app/src/main/res/values-night/themes.xml
+new file mode 100644
+--- /dev/null	(date 1716371196374)
++++ b/app/src/main/res/values-night/themes.xml	(date 1716371196374)
+@@ -0,0 +1,7 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Base.Theme.SAİ" parent="Theme.Material3.DayNight.NoActionBar">
++        <!-- Customize your dark theme here. -->
++        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
++    </style>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/values-land/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-land/dimens.xml b/app/src/main/res/values-land/dimens.xml
+new file mode 100644
+--- /dev/null	(date 1716371196486)
++++ b/app/src/main/res/values-land/dimens.xml	(date 1716371196486)
+@@ -0,0 +1,3 @@
++<resources>
++    <dimen name="fab_margin">48dp</dimen>
++</resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/sa/History.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/sa/History.java b/app/src/main/java/com/example/sa/History.java
+new file mode 100644
+--- /dev/null	(date 1720947506228)
++++ b/app/src/main/java/com/example/sa/History.java	(date 1720947506228)
+@@ -0,0 +1,73 @@
++package com.example.sa;
++
++import android.os.Bundle;
++import android.widget.TextView;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import java.util.List;
++
++public class History extends AppCompatActivity {
++
++    TextView date1, date2, date3, date4, date5, date6, date7, date8, date9;
++    TextView footprint1, footprint2, footprint3, footprint4, footprint5, footprint6, footprint7, footprint8, footprint9;
++    DatabaseHelper dbHelper;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.history);
++        dbHelper = new DatabaseHelper(this);
++        idBinding();
++        loadDates();
++        footprint();
++    }
++
++    public void idBinding() {
++        date1 = findViewById(R.id.date1);
++        date2 = findViewById(R.id.date2);
++        date3 = findViewById(R.id.date3);
++        date4 = findViewById(R.id.date4);
++        date5 = findViewById(R.id.date5);
++        date6 = findViewById(R.id.date6);
++        date7 = findViewById(R.id.date7);
++        date8 = findViewById(R.id.date8);
++        date9 = findViewById(R.id.date9);
++
++        footprint1 = findViewById(R.id.foothprint1);
++        footprint2 = findViewById(R.id.foothprint2);
++        footprint3 = findViewById(R.id.foothprint3);
++        footprint4 = findViewById(R.id.foothprint4);
++        footprint5 = findViewById(R.id.foothprint5);
++        footprint6 = findViewById(R.id.foothprint6);
++        footprint7 = findViewById(R.id.foothprint7);
++        footprint8 = findViewById(R.id.foothprint8);
++        footprint9 = findViewById(R.id.foothprint9);
++    }
++
++    public void loadDates() {
++        List<String> dates = dbHelper.getAllDates();
++
++        TextView[] dateViews = {date1, date2, date3, date4, date5, date6, date7, date8, date9};
++        for (int i = 0; i < dateViews.length; i++) {
++            if (i < dates.size()) {
++                dateViews[i].setText(dates.get(i));
++            } else {
++                dateViews[i].setText(""); // Eğer karşılık gelen tarih yoksa TextView'i temizle
++            }
++        }
++    }
++
++    public void footprint() {
++        List<String> dates2 = dbHelper.getAllFootprints();
++
++        TextView[] footprintViews = {footprint1, footprint2, footprint3, footprint4, footprint5, footprint6, footprint7, footprint8, footprint9};
++        for (int i = 0; i < footprintViews.length; i++) {
++            if (i < dates2.size()) {
++                footprintViews[i].setText(dates2.get(i)+" "+"CO2");
++            } else {
++                footprintViews[i].setText("");
++            }
++        }
++    }
++}
+Index: app/src/main/res/layout/history.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/history.xml b/app/src/main/res/layout/history.xml
+new file mode 100644
+--- /dev/null	(date 1720881639963)
++++ b/app/src/main/res/layout/history.xml	(date 1720881639963)
+@@ -0,0 +1,280 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@drawable/historypage"
++    android:orientation="vertical">
++
++
++    <TextView
++        android:id="@+id/textView1"
++        android:layout_width="148dp"
++        android:layout_height="44dp"
++        android:gravity="center"
++        android:text="DATE"
++        android:textColor="@color/black"
++        android:textSize="17sp"
++        android:textStyle="bold"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.06"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.277" />
++
++    <TextView
++        android:id="@+id/textView2"
++        android:layout_width="204dp"
++        android:layout_height="45dp"
++        android:gravity="center"
++        android:text="CARBON FOOTPRİNT"
++        android:textColor="@color/black"
++        android:textSize="17sp"
++        android:textStyle="bold"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.922"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.277" />
++
++
++    <LinearLayout
++        android:layout_width="150dp"
++        android:layout_height="580dp"
++        android:layout_marginStart="16dp"
++        android:layout_marginBottom="16dp"
++        android:orientation="vertical"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintStart_toStartOf="parent">
++
++        <TextView
++            android:id="@+id/date1"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_margin="10sp"
++            android:text=""
++            android:textStyle="bold"
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:layout_gravity="center"/>
++
++        <TextView
++            android:id="@+id/date2"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_margin="10sp"
++            android:text=""
++            android:textStyle="bold"
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:layout_gravity="center"/>
++
++        <TextView
++            android:id="@+id/date3"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_margin="10sp"
++            android:text=""
++            android:textStyle="bold"
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:layout_gravity="center"/>
++
++        <TextView
++            android:id="@+id/date4"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_margin="10sp"
++            android:text=""
++            android:textStyle="bold"
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:layout_gravity="center"/>
++        <TextView
++            android:id="@+id/date5"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_margin="10sp"
++            android:text=""
++            android:textStyle="bold"
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:layout_gravity="center"/>
++        <TextView
++            android:id="@+id/date6"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_margin="10sp"
++            android:text=""
++            android:textStyle="bold"
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:layout_gravity="center"/>
++        <TextView
++            android:id="@+id/date7"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_margin="10sp"
++            android:text=""
++            android:textStyle="bold"
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:layout_gravity="center"/>
++        <TextView
++            android:id="@+id/date8"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_margin="10sp"
++            android:text=""
++            android:textStyle="bold"
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:layout_gravity="center"/>
++        <TextView
++            android:id="@+id/date9"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_margin="10sp"
++            android:text=""
++            android:textStyle="bold"
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:gravity="center"
++            android:layout_gravity="center"/>
++
++
++    </LinearLayout>
++
++    <LinearLayout
++        android:layout_width="150dp"
++        android:layout_height="580dp"
++        android:layout_marginEnd="16dp"
++        android:layout_marginBottom="16dp"
++        android:orientation="vertical"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView2"
++        app:layout_constraintVertical_bias="1.0">
++
++        <TextView
++            android:id="@+id/foothprint1"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_gravity="center"
++            android:layout_margin="10sp"
++            android:gravity="center"
++            android:text=""
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:textStyle="bold" />
++
++        <TextView
++            android:id="@+id/foothprint2"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_gravity="center"
++            android:layout_margin="10sp"
++            android:gravity="center"
++            android:text=""
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:textStyle="bold" />
++
++        <TextView
++            android:id="@+id/foothprint3"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_gravity="center"
++            android:layout_margin="10sp"
++            android:gravity="center"
++            android:text=""
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:textStyle="bold" />
++
++        <TextView
++            android:id="@+id/foothprint4"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_gravity="center"
++            android:layout_margin="10sp"
++            android:gravity="center"
++            android:text=""
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:textStyle="bold" />
++
++        <TextView
++            android:id="@+id/foothprint5"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_gravity="center"
++            android:layout_margin="10sp"
++            android:gravity="center"
++            android:text=""
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:textStyle="bold" />
++
++        <TextView
++            android:id="@+id/foothprint6"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_gravity="center"
++            android:layout_margin="10sp"
++            android:gravity="center"
++            android:text=""
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:textStyle="bold" />
++
++        <TextView
++            android:id="@+id/foothprint7"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_gravity="center"
++            android:layout_margin="10sp"
++            android:gravity="center"
++            android:text=""
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:textStyle="bold" />
++
++        <TextView
++            android:id="@+id/foothprint8"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_gravity="center"
++            android:layout_margin="10sp"
++            android:gravity="center"
++            android:text=""
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:textStyle="bold" />
++
++        <TextView
++            android:id="@+id/foothprint9"
++            android:layout_width="148sp"
++            android:layout_height="44sp"
++            android:layout_gravity="center"
++            android:layout_margin="10sp"
++            android:gravity="center"
++            android:text=""
++            android:textColor="@color/black"
++            android:textSize="20sp"
++            android:textStyle="bold" />
++    </LinearLayout>
++
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/values-w600dp/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-w600dp/dimens.xml b/app/src/main/res/values-w600dp/dimens.xml
+new file mode 100644
+--- /dev/null	(date 1716371196497)
++++ b/app/src/main/res/values-w600dp/dimens.xml	(date 1716371196497)
+@@ -0,0 +1,3 @@
++<resources>
++    <dimen name="fab_margin">48dp</dimen>
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/values-w1240dp/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-w1240dp/dimens.xml b/app/src/main/res/values-w1240dp/dimens.xml
+new file mode 100644
+--- /dev/null	(date 1716371196506)
++++ b/app/src/main/res/values-w1240dp/dimens.xml	(date 1716371196506)
+@@ -0,0 +1,3 @@
++<resources>
++    <dimen name="fab_margin">200dp</dimen>
++</resources>
+\ No newline at end of file
+Index: gradle/libs.versions.toml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradle/libs.versions.toml b/gradle/libs.versions.toml
+new file mode 100644
+--- /dev/null	(date 1720805197574)
++++ b/gradle/libs.versions.toml	(date 1720805197574)
+@@ -0,0 +1,26 @@
++[versions]
++agp = "8.3.1"
++junit = "4.13.2"
++junitVersion = "1.1.5"
++espressoCore = "3.5.1"
++appcompat = "1.6.1"
++material = "1.10.0"
++activity = "1.8.0"
++constraintlayout = "2.1.4"
++navigationFragment = "2.6.0"
++navigationUi = "2.6.0"
++
++[libraries]
++junit = { group = "junit", name = "junit", version.ref = "junit" }
++ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
++espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
++appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
++material = { group = "com.google.android.material", name = "material", version.ref = "material" }
++activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
++constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
++navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
++navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
++
++[plugins]
++androidApplication = { id = "com.android.application", version.ref = "agp" }
++
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+new file mode 100644
+--- /dev/null	(date 1713125814936)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1713125814936)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+new file mode 100644
+--- /dev/null	(date 1713125817302)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1713125817302)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
++    <background android:drawable="@drawable/ic_launcher_background" />
++    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
++</adaptive-icon>
+\ No newline at end of file
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+new file mode 100644
+--- /dev/null	(date 1720805197595)
++++ b/gradle/wrapper/gradle-wrapper.properties	(date 1720805197595)
+@@ -0,0 +1,6 @@
++#Sun Apr 14 23:17:01 TRT 2024
++distributionBase=GRADLE_USER_HOME
++distributionPath=wrapper/dists
++distributionUrl=https\://services.gradle.org/distributions/gradle-8.4-bin.zip
++zipStoreBase=GRADLE_USER_HOME
++zipStorePath=wrapper/dists
+Index: gradle.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/gradle.properties b/gradle.properties
+new file mode 100644
+--- /dev/null	(date 1713125806897)
++++ b/gradle.properties	(date 1713125806897)
+@@ -0,0 +1,21 @@
++# Project-wide Gradle settings.
++# IDE (e.g. Android Studio) users:
++# Gradle settings configured through the IDE *will override*
++# any settings specified in this file.
++# For more details on how to configure your build environment visit
++# http://www.gradle.org/docs/current/userguide/build_environment.html
++# Specifies the JVM arguments used for the daemon process.
++# The setting is particularly useful for tweaking memory settings.
++org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
++# When configured, Gradle will run in incubating parallel mode.
++# This option should only be used with decoupled projects. For more details, visit
++# https://developer.android.com/r/tools/gradle-multi-project-decoupled-projects
++# org.gradle.parallel=true
++# AndroidX package structure to make it clearer which packages are bundled with the
++# Android operating system, and which are packaged with your app's APK
++# https://developer.android.com/topic/libraries/support-library/androidx-rn
++android.useAndroidX=true
++# Enables namespacing of each library's R class so that its R class includes only the
++# resources declared in the library itself and none from the library's dependencies,
++# thereby reducing the size of the R class for that library
++android.nonTransitiveRClass=true
+\ No newline at end of file
+Index: app/proguard-rules.pro
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/proguard-rules.pro b/app/proguard-rules.pro
+new file mode 100644
+--- /dev/null	(date 1713125808213)
++++ b/app/proguard-rules.pro	(date 1713125808213)
+@@ -0,0 +1,21 @@
++# Add project specific ProGuard rules here.
++# You can control the set of applied configuration files using the
++# proguardFiles setting in build.gradle.
++#
++# For more details, see
++#   http://developer.android.com/guide/developing/tools/proguard.html
++
++# If your project uses WebView with JS, uncomment the following
++# and specify the fully qualified class name to the JavaScript interface
++# class:
++#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
++#   public *;
++#}
++
++# Uncomment this to preserve the line number information for
++# debugging stack traces.
++#-keepattributes SourceFile,LineNumberTable
++
++# If you keep the line number information, uncomment this to
++# hide the original source file name.
++#-renamesourcefileattribute SourceFile
+\ No newline at end of file
+Index: app/src/main/java/com/example/sa/WhatCarbonFootPrint.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/sa/WhatCarbonFootPrint.java b/app/src/main/java/com/example/sa/WhatCarbonFootPrint.java
+new file mode 100644
+--- /dev/null	(date 1720949386804)
++++ b/app/src/main/java/com/example/sa/WhatCarbonFootPrint.java	(date 1720949386804)
+@@ -0,0 +1,16 @@
++package com.example.sa;
++
++import android.os.Bundle;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++public class WhatCarbonFootPrint extends AppCompatActivity {
++
++    @Override
++   protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.what_carbon_footprint);
++
++    }
++
++}
+Index: app/src/main/res/layout/what_carbon_footprint.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/what_carbon_footprint.xml b/app/src/main/res/layout/what_carbon_footprint.xml
+new file mode 100644
+--- /dev/null	(date 1720953290259)
++++ b/app/src/main/res/layout/what_carbon_footprint.xml	(date 1720953290259)
+@@ -0,0 +1,68 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical">
++
++    <ScrollView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        tools:ignore="SpeakableTextPresentCheck">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical"
++            tools:ignore="ExtraText">
++
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="@string/Main_title"
++                android:textColor="@color/black"
++                android:textSize="25dp"
++                android:textStyle="bold"
++                android:gravity="center"
++                android:layout_gravity="center"
++                android:padding="10dp" />
++
++            <ImageView
++                android:id="@+id/imageView"
++                android:layout_width="400dp"
++                android:layout_height="200dp"
++                app:srcCompat="@drawable/whatcarbonfootprint" />
++
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="@string/short_answer_title"
++                android:textColor="@color/black"
++                android:textSize="20dp"
++                android:textStyle="bold"
++                android:gravity="center"
++                android:layout_gravity="left"
++                android:layout_marginLeft="10dp"/>
++
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="@string/short_answer"
++                android:textColor="@color/black"
++                android:textSize="17dp"
++                android:layout_marginLeft="8dp"/>
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="@string/long_answer_title"
++                android:textColor="@color/black"
++                android:textSize="20dp"
++                android:textStyle="bold"
++                android:gravity="center"
++                android:layout_margin="10dp"/>"
++
++
++        </LinearLayout>
++    </ScrollView>
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/sa/DatabaseHelper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/sa/DatabaseHelper.java b/app/src/main/java/com/example/sa/DatabaseHelper.java
+new file mode 100644
+--- /dev/null	(date 1720862040373)
++++ b/app/src/main/java/com/example/sa/DatabaseHelper.java	(date 1720862040373)
+@@ -0,0 +1,81 @@
++package com.example.sa;
++
++import android.content.ContentValues;
++import android.content.Context;
++import android.database.Cursor;
++import android.database.sqlite.SQLiteDatabase;
++import android.database.sqlite.SQLiteOpenHelper;
++
++import androidx.annotation.Nullable;
++
++import java.util.ArrayList;
++import java.util.List;
++
++public class DatabaseHelper extends SQLiteOpenHelper {
++
++    private static final String DATABASE_NAME = "sai.db";
++    private static final int DATABASE_VERSION = 1;
++
++    public static final String Table_Name = "sai";
++    public static final String COLUMN_footPrint = "footPrint";
++    public static final String COLUMN_date = "date";
++    public static final String COLUMN_id = "id";
++
++    private static final String CREATE_TABLE_SQL = "CREATE TABLE " + Table_Name + " (" +
++            COLUMN_id + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
++            COLUMN_date + " TEXT NOT NULL, " +
++            COLUMN_footPrint + " TEXT NOT NULL);";
++
++    public DatabaseHelper(@Nullable Context context) {
++        super(context, DATABASE_NAME, null, DATABASE_VERSION);
++    }
++
++    @Override
++    public void onCreate(SQLiteDatabase db) {
++        db.execSQL(CREATE_TABLE_SQL);
++    }
++
++    @Override
++    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
++        db.execSQL("DROP TABLE IF EXISTS " + Table_Name);
++        onCreate(db);
++    }
++
++    public long insertFootprint(String footPrint, String date) {
++        SQLiteDatabase db = getWritableDatabase();
++        ContentValues values = new ContentValues();
++        values.put(COLUMN_footPrint, footPrint);
++        values.put(COLUMN_date, date);
++        return db.insert(Table_Name, null, values);
++    }
++
++
++        public List<String> getAllDates() {
++            List<String> dates = new ArrayList<>();
++            SQLiteDatabase db = this.getReadableDatabase();
++            Cursor cursor = db.query(Table_Name, new String[]{COLUMN_date}, null, null, null, null, COLUMN_id + " DESC");
++
++            if (cursor.moveToFirst()) {
++                do {
++                    dates.add(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_date)));
++                } while (cursor.moveToNext());
++            }
++            cursor.close();
++            return dates;
++        }
++
++        public List<String>getAllFootprints(){
++        List<String>footprints=new ArrayList<>();
++        SQLiteDatabase db=this.getReadableDatabase();
++        Cursor cursor=db.query(Table_Name,new String[]{COLUMN_footPrint},null,null,null,null,COLUMN_id+" DESC");
++        if(cursor.moveToFirst()){
++            do{
++                footprints.add(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_footPrint)));
++            }while(cursor.moveToNext());
++        }
++        cursor.close();
++        return footprints;
++
++    }
++    }
++
+Index: app/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/.gitignore b/app/.gitignore
+new file mode 100644
+--- /dev/null	(date 1713125807594)
++++ b/app/.gitignore	(date 1713125807594)
+@@ -0,0 +1,1 @@
++/build
+\ No newline at end of file
+Index: gradlew
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradlew b/gradlew
+new file mode 100644
+--- /dev/null	(date 1713125804537)
++++ b/gradlew	(date 1713125804537)
+@@ -0,0 +1,185 @@
++#!/usr/bin/env sh
++
++#
++# Copyright 2015 the original author or authors.
++#
++# Licensed under the Apache License, Version 2.0 (the "License");
++# you may not use this file except in compliance with the License.
++# You may obtain a copy of the License at
++#
++#      https://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++#
++
++##############################################################################
++##
++##  Gradle start up script for UN*X
++##
++##############################################################################
++
++# Attempt to set APP_HOME
++# Resolve links: $0 may be a link
++PRG="$0"
++# Need this for relative symlinks.
++while [ -h "$PRG" ] ; do
++    ls=`ls -ld "$PRG"`
++    link=`expr "$ls" : '.*-> \(.*\)$'`
++    if expr "$link" : '/.*' > /dev/null; then
++        PRG="$link"
++    else
++        PRG=`dirname "$PRG"`"/$link"
++    fi
++done
++SAVED="`pwd`"
++cd "`dirname \"$PRG\"`/" >/dev/null
++APP_HOME="`pwd -P`"
++cd "$SAVED" >/dev/null
++
++APP_NAME="Gradle"
++APP_BASE_NAME=`basename "$0"`
++
++# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
++
++# Use the maximum available, or set MAX_FD != -1 to use that value.
++MAX_FD="maximum"
++
++warn () {
++    echo "$*"
++}
++
++die () {
++    echo
++    echo "$*"
++    echo
++    exit 1
++}
++
++# OS specific support (must be 'true' or 'false').
++cygwin=false
++msys=false
++darwin=false
++nonstop=false
++case "`uname`" in
++  CYGWIN* )
++    cygwin=true
++    ;;
++  Darwin* )
++    darwin=true
++    ;;
++  MINGW* )
++    msys=true
++    ;;
++  NONSTOP* )
++    nonstop=true
++    ;;
++esac
++
++CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
++
++
++# Determine the Java command to use to start the JVM.
++if [ -n "$JAVA_HOME" ] ; then
++    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
++        # IBM's JDK on AIX uses strange locations for the executables
++        JAVACMD="$JAVA_HOME/jre/sh/java"
++    else
++        JAVACMD="$JAVA_HOME/bin/java"
++    fi
++    if [ ! -x "$JAVACMD" ] ; then
++        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++    fi
++else
++    JAVACMD="java"
++    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++
++Please set the JAVA_HOME variable in your environment to match the
++location of your Java installation."
++fi
++
++# Increase the maximum file descriptors if we can.
++if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
++    MAX_FD_LIMIT=`ulimit -H -n`
++    if [ $? -eq 0 ] ; then
++        if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
++            MAX_FD="$MAX_FD_LIMIT"
++        fi
++        ulimit -n $MAX_FD
++        if [ $? -ne 0 ] ; then
++            warn "Could not set maximum file descriptor limit: $MAX_FD"
++        fi
++    else
++        warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
++    fi
++fi
++
++# For Darwin, add options to specify how the application appears in the dock
++if $darwin; then
++    GRADLE_OPTS="$GRADLE_OPTS \"-Xdock:name=$APP_NAME\" \"-Xdock:icon=$APP_HOME/media/gradle.icns\""
++fi
++
++# For Cygwin or MSYS, switch paths to Windows format before running java
++if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
++    APP_HOME=`cygpath --path --mixed "$APP_HOME"`
++    CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
++
++    JAVACMD=`cygpath --unix "$JAVACMD"`
++
++    # We build the pattern for arguments to be converted via cygpath
++    ROOTDIRSRAW=`find -L / -maxdepth 1 -mindepth 1 -type d 2>/dev/null`
++    SEP=""
++    for dir in $ROOTDIRSRAW ; do
++        ROOTDIRS="$ROOTDIRS$SEP$dir"
++        SEP="|"
++    done
++    OURCYGPATTERN="(^($ROOTDIRS))"
++    # Add a user-defined pattern to the cygpath arguments
++    if [ "$GRADLE_CYGPATTERN" != "" ] ; then
++        OURCYGPATTERN="$OURCYGPATTERN|($GRADLE_CYGPATTERN)"
++    fi
++    # Now convert the arguments - kludge to limit ourselves to /bin/sh
++    i=0
++    for arg in "$@" ; do
++        CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`
++        CHECK2=`echo "$arg"|egrep -c "^-"`                                 ### Determine if an option
++
++        if [ $CHECK -ne 0 ] && [ $CHECK2 -eq 0 ] ; then                    ### Added a condition
++            eval `echo args$i`=`cygpath --path --ignore --mixed "$arg"`
++        else
++            eval `echo args$i`="\"$arg\""
++        fi
++        i=`expr $i + 1`
++    done
++    case $i in
++        0) set -- ;;
++        1) set -- "$args0" ;;
++        2) set -- "$args0" "$args1" ;;
++        3) set -- "$args0" "$args1" "$args2" ;;
++        4) set -- "$args0" "$args1" "$args2" "$args3" ;;
++        5) set -- "$args0" "$args1" "$args2" "$args3" "$args4" ;;
++        6) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" ;;
++        7) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" ;;
++        8) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" ;;
++        9) set -- "$args0" "$args1" "$args2" "$args3" "$args4" "$args5" "$args6" "$args7" "$args8" ;;
++    esac
++fi
++
++# Escape application args
++save () {
++    for i do printf %s\\n "$i" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/' \\\\/" ; done
++    echo " "
++}
++APP_ARGS=`save "$@"`
++
++# Collect all arguments for the java command, following the shell quoting and substitution rules
++eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
++
++exec "$JAVACMD" "$@"
+Index: app/src/main/java/com/example/sa/Calculation.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/sa/Calculation.java b/app/src/main/java/com/example/sa/Calculation.java
+new file mode 100644
+--- /dev/null	(date 1720803451685)
++++ b/app/src/main/java/com/example/sa/Calculation.java	(date 1720803451685)
+@@ -0,0 +1,183 @@
++package com.example.sa;
++
++import android.content.Intent;
++import android.os.Bundle;
++import android.view.View;
++import android.widget.CheckBox;
++import android.widget.EditText;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import java.math.BigDecimal;
++import java.text.SimpleDateFormat;
++import java.util.Date;
++import java.util.Locale;
++
++public class Calculation extends AppCompatActivity {
++
++    static EditText electrcity, heating, fuel, airTravel, trainTravel, meat, milk, vegatablesFruits;
++    static CheckBox checkboxElectricity, checkboxHeatingNaturalGas, checkBoxCoal, checkboxGasolina, checkBoxLpg, checkBoxDiesel,
++            checkboxAirTravel, checkboxTrainTravel, checkboxMeat;
++
++    static BigDecimal electriciTYCarbonFootprint, fuelCarbonFootprint, airTravelCarbonFootprint, trainTravelCarbonFootprint,
++            MeatCarbonFootprint, MilkCarbonFootprint, VegatablesFruitsCarbonFootprint;
++    static BigDecimal heatingCarbonFootprint,eatCarbonFootprint,totalTravelCarbonFootprint;
++
++    static BigDecimal totalCarbonFootprint;
++
++    private DatabaseHelper dbHelper;
++
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.calculation);
++
++        idBinding();
++        dbHelper = new DatabaseHelper(this);
++
++    }
++
++    public void idBinding() {
++        electrcity = findViewById(R.id.editTextElectricity);
++        heating = findViewById(R.id.editTextHeating);
++        fuel = findViewById(R.id.editTextFuel);
++        airTravel = findViewById(R.id.editTextAirTravel);
++        trainTravel = findViewById(R.id.editTextTrainTravel);
++        meat = findViewById(R.id.editTextMeaat);
++        milk = findViewById(R.id.editTextMilk);
++        vegatablesFruits = findViewById(R.id.editTextVegatablesFruits);
++
++        checkboxElectricity = findViewById(R.id.checkBoxElectricity);
++        checkboxHeatingNaturalGas = findViewById(R.id.checkBoxNaturalGas);
++        checkBoxCoal = findViewById(R.id.checkBoxCoal);
++        checkboxGasolina = findViewById(R.id.checkBoxGasolina);
++        checkBoxLpg = findViewById(R.id.checkBoxLpg);
++        checkBoxDiesel = findViewById(R.id.checkBoxDiesel);
++        checkboxAirTravel = findViewById(R.id.checkBoxTravelAir);
++        checkboxTrainTravel = findViewById(R.id.checkBoxTravelTrain);
++        checkboxMeat = findViewById(R.id.checkBoxMeat);
++    }
++
++    public void calculate(View v) {
++        electricityCalculate();
++        heatingCalculate();
++        fuelCalculate();
++        airTravelCalculate();
++        trainTravelCalculate();
++        meatCalculate();
++        milkCalculate();
++        vegatablesFruitsCalculate();
++        totalCarbonFootprint();
++        saveTotalCarbonFootprint();
++
++
++        Intent azx = new Intent(Calculation.this, Conclusion.class);
++        startActivity(azx);
++    }
++
++    private BigDecimal getEditTextValue(EditText editText) {
++        String text = editText.getText().toString().trim();
++        return text.isEmpty() ? BigDecimal.ZERO : new BigDecimal(text);
++    }
++
++    public void electricityCalculate() {
++        BigDecimal electricityEmisson = new BigDecimal("0.76");
++
++        if (checkboxElectricity.isChecked()) {
++            electrcity.setText("0");
++        }
++
++        BigDecimal electricityUsed = getEditTextValue(electrcity);
++        electriciTYCarbonFootprint = electricityUsed.multiply(electricityEmisson);
++    }
++
++    public void heatingCalculate() {
++        BigDecimal CoalEmisson = new BigDecimal("2.5");
++        BigDecimal NaturalGasEmisson = new BigDecimal("2.2");
++
++        BigDecimal heatingUsed = getEditTextValue(heating);
++
++        if (checkboxHeatingNaturalGas.isChecked()) {
++            heatingCarbonFootprint = heatingUsed.multiply(NaturalGasEmisson);
++        } else if (checkBoxCoal.isChecked()) {
++            heatingCarbonFootprint = heatingUsed.multiply(CoalEmisson);
++        }
++    }
++
++    public void fuelCalculate() {
++        BigDecimal gasolinaEmisson = new BigDecimal("2.3");
++        BigDecimal LpgEmisson = new BigDecimal("2.5");
++        BigDecimal DieselEmisson = new BigDecimal("2.7");
++
++        BigDecimal fuelUsed = getEditTextValue(fuel);
++
++        if (checkboxGasolina.isChecked()) {
++            fuelCarbonFootprint = fuelUsed.multiply(gasolinaEmisson);
++        } else if (checkBoxLpg.isChecked()) {
++            fuelCarbonFootprint = fuelUsed.multiply(LpgEmisson);
++        } else if (checkBoxDiesel.isChecked()) {
++            fuelCarbonFootprint = fuelUsed.multiply(DieselEmisson);
++        }
++    }
++
++    public void airTravelCalculate() {
++        BigDecimal airEmisson = new BigDecimal("0.2");
++
++        if (checkboxAirTravel.isChecked()) {
++            airTravel.setText("0");
++        }
++
++        BigDecimal airTravelUsed = getEditTextValue(airTravel);
++        airTravelCarbonFootprint = airTravelUsed.multiply(airEmisson);
++    }
++
++    public void trainTravelCalculate() {
++        BigDecimal trainEmisson = new BigDecimal("0.04");
++
++        if (checkboxTrainTravel.isChecked()) {
++            trainTravel.setText("0");
++        }
++
++        BigDecimal trainTravelUsed = getEditTextValue(trainTravel);
++        trainTravelCarbonFootprint = trainTravelUsed.multiply(trainEmisson);
++        totalTravelCarbonFootprint = airTravelCarbonFootprint.add(trainTravelCarbonFootprint);
++    }
++
++    public void meatCalculate() {
++        BigDecimal meatEmisson = new BigDecimal("27");
++
++        if (checkboxMeat.isChecked()) {
++            meat.setText("0");
++        }
++
++        BigDecimal meatUsed = getEditTextValue(meat);
++        MeatCarbonFootprint = meatUsed.multiply(meatEmisson);
++    }
++
++    public void milkCalculate() {
++        BigDecimal milkEmisson = new BigDecimal("0.7");
++
++        BigDecimal milkUsed = getEditTextValue(milk);
++        MilkCarbonFootprint = milkUsed.multiply(milkEmisson);
++    }
++
++    public void vegatablesFruitsCalculate() {
++        BigDecimal vegatablesFruitsEmisson = new BigDecimal("0.5");
++
++        BigDecimal vegatablesFruitsUsed = getEditTextValue(vegatablesFruits);
++        VegatablesFruitsCarbonFootprint = vegatablesFruitsUsed.multiply(vegatablesFruitsEmisson);
++        eatCarbonFootprint = MeatCarbonFootprint.add(MilkCarbonFootprint).add(VegatablesFruitsCarbonFootprint);
++    }
++
++    public void totalCarbonFootprint() {
++        totalCarbonFootprint = eatCarbonFootprint.add(heatingCarbonFootprint).add(fuelCarbonFootprint).add(totalTravelCarbonFootprint).add(electriciTYCarbonFootprint);
++
++    }
++    private void saveTotalCarbonFootprint() {
++
++        String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
++        dbHelper.insertFootprint(totalCarbonFootprint.toString(), currentDate);
++    }
++
++}
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(date 1713125804349)
++++ b/.gitignore	(date 1713125804349)
+@@ -0,0 +1,15 @@
++*.iml
++.gradle
++/local.properties
++/.idea/caches
++/.idea/libraries
++/.idea/modules.xml
++/.idea/workspace.xml
++/.idea/navEditor.xml
++/.idea/assetWizardSettings.xml
++.DS_Store
++/build
++/captures
++.externalNativeBuild
++.cxx
++local.properties
+Index: gradlew.bat
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gradlew.bat b/gradlew.bat
+new file mode 100644
+--- /dev/null	(date 1713125804599)
++++ b/gradlew.bat	(date 1713125804599)
+@@ -0,0 +1,89 @@
++@rem
++@rem Copyright 2015 the original author or authors.
++@rem
++@rem Licensed under the Apache License, Version 2.0 (the "License");
++@rem you may not use this file except in compliance with the License.
++@rem You may obtain a copy of the License at
++@rem
++@rem      https://www.apache.org/licenses/LICENSE-2.0
++@rem
++@rem Unless required by applicable law or agreed to in writing, software
++@rem distributed under the License is distributed on an "AS IS" BASIS,
++@rem WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++@rem See the License for the specific language governing permissions and
++@rem limitations under the License.
++@rem
++
++@if "%DEBUG%" == "" @echo off
++@rem ##########################################################################
++@rem
++@rem  Gradle startup script for Windows
++@rem
++@rem ##########################################################################
++
++@rem Set local scope for the variables with windows NT shell
++if "%OS%"=="Windows_NT" setlocal
++
++set DIRNAME=%~dp0
++if "%DIRNAME%" == "" set DIRNAME=.
++set APP_BASE_NAME=%~n0
++set APP_HOME=%DIRNAME%
++
++@rem Resolve any "." and ".." in APP_HOME to make it shorter.
++for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
++
++@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
++set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
++
++@rem Find java.exe
++if defined JAVA_HOME goto findJavaFromJavaHome
++
++set JAVA_EXE=java.exe
++%JAVA_EXE% -version >NUL 2>&1
++if "%ERRORLEVEL%" == "0" goto execute
++
++echo.
++echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:findJavaFromJavaHome
++set JAVA_HOME=%JAVA_HOME:"=%
++set JAVA_EXE=%JAVA_HOME%/bin/java.exe
++
++if exist "%JAVA_EXE%" goto execute
++
++echo.
++echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
++echo.
++echo Please set the JAVA_HOME variable in your environment to match the
++echo location of your Java installation.
++
++goto fail
++
++:execute
++@rem Setup the command line
++
++set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
++
++
++@rem Execute Gradle
++"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
++
++:end
++@rem End local scope for the variables with windows NT shell
++if "%ERRORLEVEL%"=="0" goto mainEnd
++
++:fail
++rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
++rem the _cmd.exe /c_ return code!
++if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
++exit /b 1
++
++:mainEnd
++if "%OS%"=="Windows_NT" endlocal
++
++:omega
+Index: app/src/main/java/com/example/sa/Conclusion.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/sa/Conclusion.java b/app/src/main/java/com/example/sa/Conclusion.java
+new file mode 100644
+--- /dev/null	(date 1720946910036)
++++ b/app/src/main/java/com/example/sa/Conclusion.java	(date 1720946910036)
+@@ -0,0 +1,132 @@
++package com.example.sa;
++
++import android.annotation.SuppressLint;
++import android.graphics.Color;
++import android.os.Bundle;
++import android.widget.TextView;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import java.math.BigDecimal;
++
++public class Conclusion extends AppCompatActivity {
++
++    static TextView TextViewElectricity,TextViewHeating,TextViewFuel, TextViewTotalTravel,TextViewMiniTrain,TextViewMiniAir,
++            TextViewEat, TextViewMiniMeat,TextViewMiniMilk,TextViewMiniVegatable;
++
++    static TextView TextViewtotalCarbonFootprint;
++
++    @SuppressLint("MissingInflatedId")
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_conclusion);
++
++        idBinding();
++        textSetTextView();
++        colorSetTextView();
++
++    }
++
++    public void idBinding(){
++
++        TextViewElectricity = findViewById(R.id.textView33);
++        TextViewHeating = findViewById(R.id.textView34);
++        TextViewFuel = findViewById(R.id.textView35);
++        TextViewTotalTravel = findViewById(R.id.textView36);
++        TextViewEat = findViewById(R.id.textView37);
++        TextViewMiniTrain = findViewById(R.id.textView38);
++        TextViewMiniAir = findViewById(R.id.textView39);
++        TextViewMiniMilk = findViewById(R.id.textView40);
++        TextViewMiniMeat = findViewById(R.id.textView41);
++        TextViewMiniVegatable = findViewById(R.id.textView29);
++        TextViewtotalCarbonFootprint = findViewById(R.id.textView49);
++
++    }
++
++    public void textSetTextView(){
++
++        TextViewElectricity.setText(Calculation.electriciTYCarbonFootprint.toString()+" "+"CO2");
++        TextViewHeating.setText(Calculation.heatingCarbonFootprint.toString()+" "+"CO2");
++        TextViewFuel.setText(Calculation.fuelCarbonFootprint.toString()+" "+"CO2");
++        TextViewTotalTravel.setText(Calculation.totalTravelCarbonFootprint.toString());
++        TextViewEat.setText(Calculation.eatCarbonFootprint.toString()+" "+"CO2");
++        TextViewMiniTrain.setText(Calculation.trainTravelCarbonFootprint.toString()+" "+"CO2");
++        TextViewMiniAir.setText(Calculation.airTravelCarbonFootprint.toString()+" "+"CO2");
++        TextViewMiniMilk.setText(Calculation.MilkCarbonFootprint.toString()+" "+"CO2");
++        TextViewMiniMeat.setText(Calculation.MeatCarbonFootprint.toString()+" "+"CO2");
++        TextViewMiniVegatable.setText(Calculation.VegatablesFruitsCarbonFootprint.toString()+" "+"CO2");
++        TextViewtotalCarbonFootprint.setText(Calculation.totalCarbonFootprint.toString()+" "+"CO2");
++    
++    }
++
++    public void colorSetTextView(){
++
++        if (Calculation.electriciTYCarbonFootprint.compareTo(new BigDecimal("130")) <= 0) {
++            TextViewElectricity.setTextColor(Color.GREEN);
++        } else {
++            TextViewElectricity.setTextColor(Color.RED);
++        }
++
++        if (Calculation.heatingCarbonFootprint.compareTo(new BigDecimal("100")) <= 0) {
++            TextViewHeating.setTextColor(Color.GREEN);
++        } else {
++            TextViewHeating.setTextColor(Color.RED);
++
++        }
++        if (Calculation.fuelCarbonFootprint.compareTo(new BigDecimal("231")) <= 0) {
++            TextViewFuel.setTextColor(Color.GREEN);
++        } else {
++            TextViewFuel.setTextColor(Color.RED);
++        }
++
++        if (Calculation.totalTravelCarbonFootprint.compareTo(new BigDecimal("200")) <= 0) {
++            TextViewTotalTravel.setTextColor(Color.GREEN);
++        } else {
++            TextViewTotalTravel.setTextColor(Color.RED);
++        }
++
++        if (Calculation.trainTravelCarbonFootprint.compareTo(new BigDecimal("20")) <= 0) {
++            TextViewMiniTrain.setTextColor(Color.GREEN);
++        } else {
++            TextViewMiniTrain.setTextColor(Color.RED);
++        }
++
++        if (Calculation.airTravelCarbonFootprint.compareTo(new BigDecimal("115")) <= 0) {
++            TextViewMiniAir.setTextColor(Color.GREEN);
++        } else {
++            TextViewMiniAir.setTextColor(Color.RED);
++        }
++
++        if (Calculation.eatCarbonFootprint.compareTo(new BigDecimal("150")) <= 0) {
++            TextViewEat.setTextColor(Color.GREEN);
++        } else {
++            TextViewEat.setTextColor(Color.RED);
++        }
++
++        if (Calculation.MilkCarbonFootprint.compareTo(new BigDecimal("26")) <= 0) {
++            TextViewMiniMilk.setTextColor(Color.GREEN);
++        } else {
++            TextViewMiniMilk.setTextColor(Color.RED);
++        }
++
++        if (Calculation.VegatablesFruitsCarbonFootprint.compareTo(new BigDecimal("50")) <= 0) {
++            TextViewMiniVegatable.setTextColor(Color.GREEN);
++        } else {
++            TextViewMiniVegatable.setTextColor(Color.RED);
++        }
++
++        if (Calculation.MeatCarbonFootprint.compareTo(new BigDecimal("135")) <= 0) {
++            TextViewMiniMeat.setTextColor(Color.GREEN);
++        } else {
++            TextViewMiniMeat.setTextColor(Color.RED);
++        }
++
++        if (Calculation.totalCarbonFootprint.compareTo(new BigDecimal("900")) <= 0) {
++            TextViewtotalCarbonFootprint.setTextColor(Color.GREEN);
++        } else {
++            TextViewtotalCarbonFootprint.setTextColor(Color.RED);
++        }
++
++    }
++}
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	(date 1715950098589)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1715950098589)
+@@ -0,0 +1,11 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="NonAsciiCharacters" enabled="false" level="WARNING" enabled_by_default="false" />
++    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
++      <option name="processCode" value="true" />
++      <option name="processLiterals" value="true" />
++      <option name="processComments" value="true" />
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
+Index: app/src/test/java/com/example/sa/ExampleUnitTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/test/java/com/example/sa/ExampleUnitTest.java b/app/src/test/java/com/example/sa/ExampleUnitTest.java
+new file mode 100644
+--- /dev/null	(date 1713125814512)
++++ b/app/src/test/java/com/example/sa/ExampleUnitTest.java	(date 1713125814512)
+@@ -0,0 +1,17 @@
++package com.example.sa;
++
++import org.junit.Test;
++
++import static org.junit.Assert.*;
++
++/**
++ * Example local unit test, which will execute on the development machine (host).
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++public class ExampleUnitTest {
++    @Test
++    public void addition_isCorrect() {
++        assertEquals(4, 2 + 2);
++    }
++}
+\ No newline at end of file
+Index: .idea/render.experimental.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/render.experimental.xml b/.idea/render.experimental.xml
+new file mode 100644
+--- /dev/null	(date 1720264448035)
++++ b/.idea/render.experimental.xml	(date 1720264448035)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RenderSettings">
++    <option name="useLiveRendering" value="false" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_conclusion.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_conclusion.xml b/app/src/main/res/layout/activity_conclusion.xml
+new file mode 100644
+--- /dev/null	(date 1720966285886)
++++ b/app/src/main/res/layout/activity_conclusion.xml	(date 1720966285886)
+@@ -0,0 +1,422 @@
++<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:app="http://schemas.android.com/apk/res-auto">
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="vertical">
++
++
++        <androidx.cardview.widget.CardView
++            android:layout_width="390dp"
++            android:layout_height="200dp"
++            android:elevation="16dp"
++            android:layout_margin="16dp"
++            android:layout_gravity="center"
++            app:cardCornerRadius="24dp">
++
++            <androidx.constraintlayout.widget.ConstraintLayout
++                android:layout_width="match_parent"
++                android:layout_height="match_parent">
++
++                <ImageView
++                    android:id="@+id/imageView17"
++                    android:layout_width="100dp"
++                    android:layout_height="100dp"
++                    android:layout_marginTop="44dp"
++                    android:src="@drawable/electconclusion"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.051"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++                <TextView
++                    android:id="@+id/textView28"
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="@string/electric_carbon_footprint"
++                    android:layout_marginTop="52dp"
++                    android:textColor="@color/black"
++                    android:textSize="20dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.92"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++
++                <TextView
++                    android:id="@+id/textView33"
++                    android:layout_width="175dp"
++                    android:layout_height="36dp"
++                    android:layout_marginTop="88dp"
++                    android:text=""
++                    android:textSize="25dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.504"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++            </androidx.constraintlayout.widget.ConstraintLayout>
++
++        </androidx.cardview.widget.CardView>
++
++        <androidx.cardview.widget.CardView
++            android:layout_width="390dp"
++            android:layout_height="200dp"
++            android:elevation="16dp"
++            android:layout_margin="16dp"
++            android:layout_gravity="center"
++            app:cardCornerRadius="24dp">
++
++            <androidx.constraintlayout.widget.ConstraintLayout
++                android:layout_width="match_parent"
++                android:layout_height="match_parent">
++
++                <ImageView
++                    android:layout_width="100dp"
++                    android:layout_height="100dp"
++                    android:src="@drawable/heading"
++                    app:layout_constraintBottom_toBottomOf="parent"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:text="@string/warming_carbon_footprint"
++                    android:layout_marginTop="52dp"
++                    android:textColor="@color/black"
++                    android:textSize="20dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.92"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++                <TextView
++                    android:id="@+id/textView34"
++                    android:layout_width="175dp"
++                    android:layout_height="36dp"
++                    android:layout_marginTop="88dp"
++                    android:text=""
++                    android:textSize="25dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.504"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++            </androidx.constraintlayout.widget.ConstraintLayout>
++        </androidx.cardview.widget.CardView>
++
++        <androidx.cardview.widget.CardView
++            android:layout_width="390dp"
++            android:layout_height="200dp"
++            android:elevation="16dp"
++            android:layout_margin="16dp"
++            android:layout_gravity="center"
++            app:cardCornerRadius="24dp">
++
++            <androidx.constraintlayout.widget.ConstraintLayout
++                android:layout_width="401dp"
++                android:layout_height="190dp">
++
++                <ImageView
++                    android:layout_width="100dp"
++                    android:layout_height="100dp"
++                    android:src="@drawable/fuel"
++                    app:layout_constraintBottom_toBottomOf="parent"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_marginTop="48dp"
++                    android:text="@string/fuel_carbon_footprint"
++                    android:textColor="@color/black"
++                    android:textSize="20dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.715"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++                <TextView
++                    android:id="@+id/textView35"
++                    android:layout_width="175dp"
++                    android:layout_height="36dp"
++                    android:layout_marginTop="88dp"
++                    android:text=""
++                    android:textSize="25dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.504"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++
++            </androidx.constraintlayout.widget.ConstraintLayout>
++
++        </androidx.cardview.widget.CardView>
++
++
++        <androidx.cardview.widget.CardView
++            android:layout_width="390dp"
++            android:layout_height="200dp"
++            android:elevation="16dp"
++            android:layout_margin="16dp"
++            android:layout_gravity="center"
++            app:cardCornerRadius="24dp">
++
++            <androidx.constraintlayout.widget.ConstraintLayout
++                android:layout_width="match_parent"
++                android:layout_height="match_parent">
++
++                <ImageView
++                    android:id="@+id/imageView14"
++                    android:layout_width="100dp"
++                    android:layout_height="100dp"
++                    android:src="@drawable/travel"
++                    app:layout_constraintBottom_toBottomOf="parent"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_marginTop="48dp"
++                    android:text="@string/travel_carbon_footprint"
++                    android:textColor="@color/black"
++                    android:textSize="20dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.869"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++                <TextView
++                    android:id="@+id/textView36"
++                    android:layout_width="175dp"
++                    android:layout_height="36dp"
++                    android:layout_marginTop="88dp"
++                    android:text=""
++                    android:textSize="25dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.504"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++                <ImageView
++                    android:layout_width="40dp"
++                    android:layout_height="40dp"
++                    android:layout_marginBottom="16dp"
++                    android:src="@drawable/train"
++                    app:layout_constraintBottom_toBottomOf="parent"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.308"
++                    app:layout_constraintStart_toStartOf="parent" />
++
++                <TextView
++                    android:id="@+id/textView38"
++                    android:layout_width="50dp"
++                    android:layout_height="wrap_content"
++                    android:layout_marginBottom="28dp"
++                    android:text=""
++                    android:textColor="@color/black"
++                    app:layout_constraintBottom_toBottomOf="parent"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.464"
++                    app:layout_constraintStart_toStartOf="parent" />
++
++                <ImageView
++                    android:layout_width="40dp"
++                    android:layout_height="40dp"
++                    android:layout_marginBottom="16dp"
++                    android:src="@drawable/airtravel"
++                    app:layout_constraintBottom_toBottomOf="parent"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.651"
++                    app:layout_constraintStart_toStartOf="parent" />
++
++                <TextView
++                    android:id="@+id/textView39"
++                    android:layout_width="50dp"
++                    android:layout_height="wrap_content"
++                    android:layout_marginBottom="24dp"
++                    android:text=""
++                    android:textColor="@color/black"
++                    app:layout_constraintBottom_toBottomOf="parent"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.832"
++                    app:layout_constraintStart_toStartOf="parent" />
++
++            </androidx.constraintlayout.widget.ConstraintLayout>
++        </androidx.cardview.widget.CardView>
++
++        <androidx.cardview.widget.CardView
++            android:layout_width="390dp"
++            android:layout_height="200dp"
++            android:elevation="16dp"
++            android:layout_margin="16dp"
++            android:layout_gravity="center"
++            app:cardCornerRadius="24dp">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent">
++
++            <ImageView
++                android:layout_width="100dp"
++                android:layout_height="100dp"
++                android:src="@drawable/eat"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginTop="48dp"
++                android:text="@string/eat_carbon_footprint"
++                android:textColor="@color/black"
++                android:textSize="20dp"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.679"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:id="@+id/textView37"
++                android:layout_width="175dp"
++                android:layout_height="36dp"
++                android:layout_marginTop="88dp"
++                android:text=""
++                android:textSize="25dp"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.504"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <ImageView
++                android:id="@+id/imageView15"
++                android:layout_width="40dp"
++                android:layout_height="40dp"
++                android:layout_marginBottom="4dp"
++                android:src="@drawable/milk"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.425"
++                app:layout_constraintStart_toStartOf="parent" />
++
++            <TextView
++                android:id="@+id/textView40"
++                android:layout_width="50dp"
++                android:layout_height="wrap_content"
++                android:layout_marginBottom="12dp"
++                android:text=""
++                android:textColor="@color/black"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.588"
++                app:layout_constraintStart_toStartOf="parent" />
++
++            <ImageView
++                android:id="@+id/imageView16"
++                android:layout_width="40dp"
++                android:layout_height="40dp"
++                android:layout_marginBottom="8dp"
++                android:src="@drawable/meat"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.768"
++                app:layout_constraintStart_toStartOf="parent" />
++
++            <TextView
++                android:id="@+id/textView41"
++                android:layout_width="50dp"
++                android:layout_height="wrap_content"
++                android:layout_marginBottom="16dp"
++                android:text=""
++                android:textColor="@color/black"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.952"
++                app:layout_constraintStart_toStartOf="parent" />
++
++            <ImageView
++                android:layout_width="40dp"
++                android:layout_height="40dp"
++                android:layout_marginBottom="4dp"
++                android:src="@drawable/vegatable"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.102"
++                app:layout_constraintStart_toStartOf="parent" />
++
++            <TextView
++                android:id="@+id/textView29"
++                android:layout_width="50dp"
++                android:layout_height="wrap_content"
++                android:layout_marginBottom="12dp"
++                android:text=""
++                android:textColor="@color/black"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.252"
++                app:layout_constraintStart_toStartOf="parent" />
++
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++        </androidx.cardview.widget.CardView>
++
++        <androidx.cardview.widget.CardView
++            android:layout_width="390dp"
++            android:layout_height="200dp"
++            android:elevation="16dp"
++            android:layout_margin="16dp"
++            android:layout_gravity="center"
++            app:cardCornerRadius="24dp">
++
++            <androidx.constraintlayout.widget.ConstraintLayout
++                android:layout_width="match_parent"
++                android:layout_height="match_parent">
++
++                <ImageView
++                    android:layout_width="100dp"
++                    android:layout_height="100dp"
++                    android:src="@drawable/cftotal"
++                    app:layout_constraintBottom_toBottomOf="parent"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent"
++                    app:layout_constraintVertical_bias="0.55" />
++
++                <TextView
++                    android:layout_width="wrap_content"
++                    android:layout_height="wrap_content"
++                    android:layout_marginTop="28dp"
++                    android:text="@string/your_total_carbon_footprint"
++                    android:textColor="@color/black"
++                    android:textSize="20dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.797"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++                <TextView
++                    android:id="@+id/textView49"
++                    android:layout_width="175dp"
++                    android:layout_height="36dp"
++                    android:layout_marginTop="88dp"
++                    android:text=""
++                    android:textSize="25dp"
++                    app:layout_constraintEnd_toEndOf="parent"
++                    app:layout_constraintHorizontal_bias="0.504"
++                    app:layout_constraintStart_toStartOf="parent"
++                    app:layout_constraintTop_toTopOf="parent" />
++
++            </androidx.constraintlayout.widget.ConstraintLayout>
++
++        </androidx.cardview.widget.CardView>
++
++
++    </LinearLayout>
++
++</ScrollView>
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1720595673123)
++++ b/.idea/misc.xml	(date 1720595673123)
+@@ -0,0 +1,9 @@
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/build/classes" />
++  </component>
++  <component name="ProjectType">
++    <option name="id" value="Android" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+new file mode 100644
+--- /dev/null	(date 1720978340516)
++++ b/app/src/main/AndroidManifest.xml	(date 1720978340516)
+@@ -0,0 +1,41 @@
++<?xml version="1.0" encoding="utf-8"?>
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools" >
++
++    <application
++        android:allowBackup="true"
++        android:dataExtractionRules="@xml/data_extraction_rules"
++        android:fullBackupContent="@xml/backup_rules"
++        android:icon="@drawable/sai"
++        android:label="@string/app_name"
++        android:roundIcon="@mipmap/ic_launcher_round"
++        android:supportsRtl="true"
++        android:theme="@style/Theme.SAİ"
++        tools:targetApi="31" >
++
++        <activity
++            android:name=".AnaSayfa"
++            android:exported="true"
++            android:theme="@style/Theme.SAİ" >
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
++        </activity>
++
++        <activity android:name=".Calculation"
++            android:exported="false"/>
++        <activity android:name=".Conclusion"
++            android:exported="false"/>
++
++        <activity android:name=".History"
++            android:exported="false"/>
++        <activity android:name=".WhatCarbonFootPrint"
++            android:exported="false"/>
++
++
++
++    </application>
++
++</manifest>
+\ No newline at end of file
+Index: app/src/androidTest/java/com/example/sa/ExampleInstrumentedTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/androidTest/java/com/example/sa/ExampleInstrumentedTest.java b/app/src/androidTest/java/com/example/sa/ExampleInstrumentedTest.java
+new file mode 100644
+--- /dev/null	(date 1713125814824)
++++ b/app/src/androidTest/java/com/example/sa/ExampleInstrumentedTest.java	(date 1713125814824)
+@@ -0,0 +1,26 @@
++package com.example.sa;
++
++import android.content.Context;
++
++import androidx.test.platform.app.InstrumentationRegistry;
++import androidx.test.ext.junit.runners.AndroidJUnit4;
++
++import org.junit.Test;
++import org.junit.runner.RunWith;
++
++import static org.junit.Assert.*;
++
++/**
++ * Instrumented test, which will execute on an Android device.
++ *
++ * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
++ */
++@RunWith(AndroidJUnit4.class)
++public class ExampleInstrumentedTest {
++    @Test
++    public void useAppContext() {
++        // Context of the app under test.
++        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
++        assertEquals("com.example.sa", appContext.getPackageName());
++    }
++}
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+new file mode 100644
+--- /dev/null	(date 1713194707989)
++++ b/.idea/gradle.xml	(date 1713194707989)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$" />
++            <option value="$PROJECT_DIR$/app" />
++          </set>
++        </option>
++        <option name="resolveExternalAnnotations" value="false" />
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/xml/backup_rules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/xml/backup_rules.xml b/app/src/main/res/xml/backup_rules.xml
+new file mode 100644
+--- /dev/null	(date 1713125818994)
++++ b/app/src/main/res/xml/backup_rules.xml	(date 1713125818994)
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="utf-8"?><!--
++   Sample backup rules file; uncomment and customize as necessary.
++   See https://developer.android.com/guide/topics/data/autobackup
++   for details.
++   Note: This file is ignored for devices older that API 31
++   See https://developer.android.com/about/versions/12/backup-restore
++-->
++<full-backup-content>
++    <!--
++   <include domain="sharedpref" path="."/>
++   <exclude domain="sharedpref" path="device.xml"/>
++-->
++</full-backup-content>
+\ No newline at end of file
+Index: app/src/main/res/xml/data_extraction_rules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/xml/data_extraction_rules.xml b/app/src/main/res/xml/data_extraction_rules.xml
+new file mode 100644
+--- /dev/null	(date 1713125819102)
++++ b/app/src/main/res/xml/data_extraction_rules.xml	(date 1713125819102)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?><!--
++   Sample data extraction rules file; uncomment and customize as necessary.
++   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
++   for details.
++-->
++<data-extraction-rules>
++    <cloud-backup>
++        <!-- TODO: Use <include> and <exclude> to control what is backed up.
++        <include .../>
++        <exclude .../>
++        -->
++    </cloud-backup>
++    <!--
++    <device-transfer>
++        <include .../>
++        <exclude .../>
++    </device-transfer>
++    -->
++</data-extraction-rules>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1713129410606)
++++ b/.idea/compiler.xml	(date 1713129410606)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="17" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/java/com/example/sa/AnaSayfa.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/sa/AnaSayfa.java b/app/src/main/java/com/example/sa/AnaSayfa.java
+new file mode 100644
+--- /dev/null	(date 1720978267382)
++++ b/app/src/main/java/com/example/sa/AnaSayfa.java	(date 1720978267382)
+@@ -0,0 +1,50 @@
++package com.example.sa;
++
++import android.annotation.SuppressLint;
++import android.content.Intent;
++import android.content.SharedPreferences;
++import android.content.res.Configuration;
++import android.database.sqlite.SQLiteDatabase;
++import android.os.Bundle;
++import android.view.View;
++
++import androidx.appcompat.app.AppCompatActivity;
++import androidx.constraintlayout.widget.ConstraintLayout;
++
++import java.util.Locale;
++
++public class AnaSayfa extends AppCompatActivity {
++
++    private DatabaseHelper dbHelper;
++
++    @SuppressLint("MissingInflatedId")
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_ana_sayfa);
++
++
++
++        dbHelper = new DatabaseHelper(this);
++        SQLiteDatabase db = dbHelper.getWritableDatabase();
++    }
++
++
++
++    public void gecis(View v) {
++        Intent az = new Intent(AnaSayfa.this, Calculation.class);
++        startActivity(az);
++    }
++
++    public void history(View v) {
++        Intent ax = new Intent(AnaSayfa.this, History.class);
++        startActivity(ax);
++    }
++
++    public void whatco(View v) {
++        Intent cv = new Intent(AnaSayfa.this, WhatCarbonFootPrint.class);
++        startActivity(cv);
++    }
++
++
++}
+Index: .idea/migrations.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/migrations.xml b/.idea/migrations.xml
+new file mode 100644
+--- /dev/null	(date 1713129410778)
++++ b/.idea/migrations.xml	(date 1713129410778)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectMigrations">
++    <option name="MigrateToGradleLocalJavaHome">
++      <set>
++        <option value="$PROJECT_DIR$" />
++      </set>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1713129406386)
++++ b/.idea/.name	(date 1713129406386)
+@@ -0,0 +1,1 @@
++SAİ
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1713194523306)
++++ b/.idea/.gitignore	(date 1713194523306)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: .idea/deploymentTargetDropDown.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+new file mode 100644
+--- /dev/null	(date 1715962707068)
++++ b/.idea/deploymentTargetDropDown.xml	(date 1715962707068)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="deploymentTargetDropDown">
++    <value>
++      <entry key="app">
++        <State />
++      </entry>
++    </value>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/appInsightsSettings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/appInsightsSettings.xml b/.idea/appInsightsSettings.xml
+new file mode 100644
+--- /dev/null	(date 1713129410512)
++++ b/.idea/appInsightsSettings.xml	(date 1713129410512)
+@@ -0,0 +1,26 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AppInsightsSettings">
++    <option name="tabSettings">
++      <map>
++        <entry key="Firebase Crashlytics">
++          <value>
++            <InsightsFilterSettings>
++              <option name="connection">
++                <ConnectionSetting>
++                  <option name="appId" value="PLACEHOLDER" />
++                  <option name="mobileSdkAppId" value="" />
++                  <option name="projectId" value="" />
++                  <option name="projectNumber" value="" />
++                </ConnectionSetting>
++              </option>
++              <option name="signal" value="SIGNAL_UNSPECIFIED" />
++              <option name="timeIntervalDays" value="THIRTY_DAYS" />
++              <option name="visibilityType" value="ALL" />
++            </InsightsFilterSettings>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_ana_sayfa.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_ana_sayfa.xml b/app/src/main/res/layout/activity_ana_sayfa.xml
+new file mode 100644
+--- /dev/null	(date 1720976101840)
++++ b/app/src/main/res/layout/activity_ana_sayfa.xml	(date 1720976101840)
+@@ -0,0 +1,144 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:id="@+id/constraintLayout"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:background="@drawable/anasayfa"
++    android:fitsSystemWindows="true"
++    tools:context=".AnaSayfa">
++
++    <androidx.cardview.widget.CardView
++        android:id="@+id/cardViewCalculation"
++        android:layout_width="140dp"
++        android:layout_height="148dp"
++        android:backgroundTint="#A4BDFE"
++        app:cardCornerRadius="24dp"
++        app:cardElevation="16dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.073"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.418">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="140dp"
++            android:onClick="gecis"
++            android:layout_height="140dp">
++
++            <ImageView
++                android:layout_width="107dp"
++                android:layout_height="101dp"
++                android:layout_marginTop="16dp"
++                android:src="@drawable/calculationicon"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:id="@+id/textView19"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginBottom="4dp"
++                android:gravity="center"
++                android:text="@string/calculation"
++                android:textColor="@color/white"
++                android:textSize="20dp"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent" />
++        </androidx.constraintlayout.widget.ConstraintLayout>
++
++    </androidx.cardview.widget.CardView>
++
++    <androidx.cardview.widget.CardView
++        android:id="@+id/cardViewHistory"
++        android:layout_width="140dp"
++        android:layout_height="148dp"
++        android:backgroundTint="#A3BCFD"
++        app:cardCornerRadius="20dp"
++        app:cardElevation="16dp"
++        android:onClick="history"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.896"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.418">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="140dp"
++            android:layout_height="148dp">
++
++            <ImageView
++                android:layout_width="134dp"
++                android:layout_height="111dp"
++                android:layout_marginTop="12dp"
++                android:src="@drawable/historyy"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.0"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:id="@+id/textView22"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginBottom="4dp"
++                android:text="@string/history"
++                android:textColor="@color/white"
++                android:textSize="20dp"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent" />
++
++        </androidx.constraintlayout.widget.ConstraintLayout>
++    </androidx.cardview.widget.CardView>
++
++    <androidx.cardview.widget.CardView
++        android:id="@+id/cardViewFootprint"
++        android:layout_width="140dp"
++        android:layout_height="148dp"
++        android:layout_marginEnd="23dp"
++        android:backgroundTint="#A4BDFE"
++        android:elevation="16dp"
++        app:cardCornerRadius="24dp"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.544"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:layout_constraintVertical_bias="0.676">
++
++        <androidx.constraintlayout.widget.ConstraintLayout
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:onClick="whatco">
++
++            <ImageView
++                android:layout_width="125dp"
++                android:layout_height="111dp"
++                android:layout_marginTop="12dp"
++                android:src="@drawable/whatco"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintHorizontal_bias="0.545"
++                app:layout_constraintStart_toStartOf="parent"
++                app:layout_constraintTop_toTopOf="parent" />
++
++            <TextView
++                android:id="@+id/textView23"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:layout_marginBottom="4dp"
++                android:text="@string/what_footprint"
++                android:textColor="@color/white"
++                android:textSize="20dp"
++                app:layout_constraintBottom_toBottomOf="parent"
++                app:layout_constraintEnd_toEndOf="parent"
++                app:layout_constraintStart_toStartOf="parent" />
++        </androidx.constraintlayout.widget.ConstraintLayout>
++    </androidx.cardview.widget.CardView>
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+Index: .idea/deploymentTargetSelector.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deploymentTargetSelector.xml b/.idea/deploymentTargetSelector.xml
+new file mode 100644
+--- /dev/null	(date 1720253969485)
++++ b/.idea/deploymentTargetSelector.xml	(date 1720253969485)
+@@ -0,0 +1,18 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="deploymentTargetSelector">
++    <selectionStates>
++      <SelectionState runConfigName="app">
++        <option name="selectionMode" value="DROPDOWN" />
++        <DropdownSelection timestamp="2024-07-06T08:18:50.092163500Z">
++          <Target type="DEFAULT_BOOT">
++            <handle>
++              <DeviceId pluginId="PhysicalDevice" identifier="serial=877b6c140013" />
++            </handle>
++          </Target>
++        </DropdownSelection>
++        <DialogSelection />
++      </SelectionState>
++    </selectionStates>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+new file mode 100644
+--- /dev/null	(date 1721045844695)
++++ b/app/src/main/res/values/strings.xml	(date 1721045844695)
+@@ -0,0 +1,42 @@
++<resources>
++    <string name="app_name">SAİ</string>
++
++
++
++    <string name="first_fragment_label" translatable="false">İlk Fragment Başlığı</string>
++    <string name="second_fragment_label" translatable="false">Second Fragment</string>
++    <string name="next" translatable="false">Next</string>
++    <string name="previous" translatable="false">Previous</string>
++
++
++    <string name="Main_title" translatable="false">What Is a Carbon Footprint?</string>
++    <string name="short_answer_title" translatable="false">The short answer:</string>
++    <string name="short_answer" translatable="false"> A “carbon footprint” is shorthand for all of a person or organization’s greenhouse
++        gas emissions that contribute to climate change.</string>
++    <string name="long_answer_title" translatable="false">A carbon footprint is a measure of the total amount of greenhouse gases,
++        primarily carbon dioxide, that are emitted directly or indirectly by human activities. Understanding the carbon footprint is
++        crucial as it helps to assess the impact of individual or organizational actions on climate change. The importance of reducing
++        one\'s carbon footprint lies in mitigating global warming and its associated effects, such as extreme weather events,
++        sea level rise, and loss of biodiversity. Various factors contribute to a carbon footprint, including energy consumption,
++        transportation choices, diet, and waste generation. For instance, using fossil fuels for electricity, heating, and transportation
++        significantly increases carbon emissions. Similarly, high meat consumption and food waste are major contributors to a larger carbon
++        footprint. By adopting sustainable practices such as using renewable energy, opting for public transport or carpooling, and reducing
++        meat intake, individuals and organizations can effectively lower their carbon footprint and contribute to a healthier planet.
++    <string name="calculation">Calculation</string>"
++
++
++
++</string>
++    <string name="settings" translatable="false">Settings</string>
++    <string name="what_footprint" translatable="false">what Footprint</string>
++    <string name="calculation" translatable="false">Calculation</string>
++    <string name="history" translatable="false">History</string>
++
++    <string name="electric_carbon_footprint" translatable="false">ELECTRIC CARBON FOOTPRINT</string>
++    <string name="warming_carbon_footprint" translatable="false">WARMING CARBON FOOTPRINT</string>
++    <string name="fuel_carbon_footprint" translatable="false">FUEL CARBON FOOTPRINT</string>
++    <string name="travel_carbon_footprint" translatable="false">TRAVEL CARBON FOOTPRINT</string>
++    <string name="eat_carbon_footprint" translatable="false">EAT CARBON FOOTPRINT</string>
++    <string name="your_total_carbon_footprint" translatable="false">YOUR TOTAL CARBON FOOTPRINT</string>
++
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+new file mode 100644
+--- /dev/null	(date 1713198339291)
++++ b/app/src/main/res/values/colors.xml	(date 1713198339291)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <color name="black">#FF000000</color>
++    <color name="white">#FFFFFFFF</color>
++    <color name="elect">#B7D7E3</color>
++    <color name="ısınma">#F85153</color>
++    <color name="ulasim">#5094D5</color>
++</resources>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1721030842737)
++++ b/.idea/vcs.xml	(date 1721030842737)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/src/main/res/values/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/dimens.xml b/app/src/main/res/values/dimens.xml
+new file mode 100644
+--- /dev/null	(date 1716371196477)
++++ b/app/src/main/res/values/dimens.xml	(date 1716371196477)
+@@ -0,0 +1,3 @@
++<resources>
++    <dimen name="fab_margin">16dp</dimen>
++</resources>
+\ No newline at end of file
+Index: gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gitignore b/gitignore
+new file mode 100644
+--- /dev/null	(date 1721031211582)
++++ b/gitignore	(date 1721031211582)
+@@ -0,0 +1,2 @@
++*.iml
++.gradle
+\ No newline at end of file
+Index: app/src/main/res/navigation/nav_graph.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/navigation/nav_graph.xml b/app/src/main/res/navigation/nav_graph.xml
+new file mode 100644
+--- /dev/null	(date 1713303021706)
++++ b/app/src/main/res/navigation/nav_graph.xml	(date 1713303021706)
+@@ -0,0 +1,28 @@
++<?xml version="1.0" encoding="utf-8"?>
++<navigation xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/nav_graph"
++    app:startDestination="@id/FirstFragment">
++
++    <fragment
++        android:id="@+id/FirstFragment"
++        android:name="com.example.sa.FirstFragment"
++        android:label="@string/first_fragment_label"
++        tools:layout="@layout/fragment_first">
++
++        <action
++            android:id="@+id/action_FirstFragment_to_SecondFragment"
++            app:destination="@id/SecondFragment" />
++    </fragment>
++    <fragment
++        android:id="@+id/SecondFragment"
++        android:name="com.example.sa.SecondFragment"
++        android:label="@string/first_fragment_label"
++        tools:layout="@layout/fragment_second">
++
++        <action
++            android:id="@+id/action_SecondFragment_to_FirstFragment"
++            app:destination="@id/FirstFragment" />
++    </fragment>
++</navigation>
+\ No newline at end of file
+Index: app/src/main/res/layout/calculation.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/calculation.xml b/app/src/main/res/layout/calculation.xml
+new file mode 100644
+--- /dev/null	(date 1720702029308)
++++ b/app/src/main/res/layout/calculation.xml	(date 1720702029308)
+@@ -0,0 +1,574 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools">
++
++
++    <ScrollView
++        android:layout_width="0dp"
++        android:layout_height="match_parent"
++        android:layout_margin="16dp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        tools:ignore="SpeakableTextPresentCheck">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical"
++            android:layout_gravity="center_horizontal">
++
++
++            <!--Monthly electricity consumption  card view   -->
++
++            <androidx.cardview.widget.CardView
++                android:layout_width="match_parent"
++                android:layout_height="150dp"
++                android:layout_margin="16dp"
++                app:cardCornerRadius="24dp"
++                android:backgroundTint="#A5BEFF"
++                app:cardElevation="15dp">
++                
++                <androidx.constraintlayout.widget.ConstraintLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="150dp">
++
++                    <ImageView
++                        android:layout_width="101sp"
++                        android:layout_height="101sp"
++                        android:layout_marginStart="4dp"
++                        android:src="@drawable/electric"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        app:layout_constraintVertical_bias="0.51" />
++
++                    <TextView
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:gravity="center"
++                        android:text="Monthly electricity consumption (in kWh)"
++                        android:textColor="@color/black"
++                        android:textSize="17dp"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <CheckBox
++                        android:id="@+id/checkBoxElectricity"
++                        android:layout_width="149dp"
++                        android:layout_height="48dp"
++                        android:layout_marginTop="24dp"
++                        android:text="I use solar energy"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.601"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <EditText
++                        android:id="@+id/editTextElectricity"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginBottom="24dp"
++                        android:ems="10"
++                        android:inputType="number"
++                        android:minHeight="48dp"
++                        android:hint=" consumption"
++                        android:gravity="center"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.76"
++                        app:layout_constraintStart_toStartOf="parent"
++                        tools:ignore="SpeakableTextPresentCheck" />
++
++                </androidx.constraintlayout.widget.ConstraintLayout>
++
++            </androidx.cardview.widget.CardView>
++
++
++            <!--Monthly heating consumption  card view   -->
++
++            <androidx.cardview.widget.CardView
++                android:layout_width="match_parent"
++                android:layout_height="150dp"
++                android:layout_margin="16dp"
++                app:cardCornerRadius="24dp"
++                android:backgroundTint="#A5BEFF"
++                app:cardElevation="15dp">
++
++                <androidx.constraintlayout.widget.ConstraintLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="150dp">
++
++                    <ImageView
++                        android:layout_width="101dp"
++                        android:layout_height="101dp"
++                        android:layout_marginStart="4dp"
++                        android:layout_marginTop="24dp"
++                        android:src="@drawable/heatinghouse"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <TextView
++                        android:id="@+id/textView25"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:gravity="center"
++                        android:text="Your monthly heating consumption"
++                        android:textColor="@color/black"
++                        android:textSize="17dp"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <CheckBox
++                        android:id="@+id/checkBoxNaturalGas"
++                        android:layout_width="113dp"
++                        android:layout_height="21dp"
++                        android:layout_marginTop="28dp"
++                        android:text="Natural Gas"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.837"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        tools:ignore="TouchTargetSizeCheck" />
++
++                    <CheckBox
++                        android:id="@+id/checkBoxCoal"
++                        android:layout_width="69dp"
++                        android:layout_height="24dp"
++                        android:layout_marginBottom="100dp"
++                        android:text="Coal"
++                        android:textSize="12dp"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.377"
++                        app:layout_constraintStart_toStartOf="parent"
++                        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
++
++                    <EditText
++                        android:id="@+id/editTextHeating"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginBottom="24dp"
++                        android:ems="10"
++                        android:gravity="center"
++                        android:hint=" consumption"
++                        android:inputType="number"
++                        android:minHeight="48dp"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.76"
++                        app:layout_constraintStart_toStartOf="parent" />
++
++                </androidx.constraintlayout.widget.ConstraintLayout>
++
++            </androidx.cardview.widget.CardView>
++
++
++            <!--Monthly fuel consumption  card view   -->
++
++            <androidx.cardview.widget.CardView
++                android:layout_width="match_parent"
++                android:layout_height="150dp"
++                android:layout_margin="16dp"
++                app:cardCornerRadius="24dp"
++                android:backgroundTint="#A5BEFF"
++                app:cardElevation="15dp">
++
++                <androidx.constraintlayout.widget.ConstraintLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="150dp">
++
++                    <ImageView
++                        android:id="@+id/imageView12"
++                        android:layout_width="101dp"
++                        android:layout_height="101dp"
++                        android:src="@drawable/cars"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <TextView
++                        android:id="@+id/textView26"
++                        android:layout_width="match_parent"
++                        android:layout_height="wrap_content"
++                        android:gravity="center"
++                        android:text="Monthly fuel consumption"
++                        android:textColor="@color/black"
++                        android:textSize="17dp"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <CheckBox
++                        android:id="@+id/checkBoxGasolina"
++                        android:layout_width="75dp"
++                        android:layout_height="21dp"
++                        android:layout_marginTop="36dp"
++                        android:text="Gasoline"
++                        android:textSize="10dp"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.371"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
++
++                    <CheckBox
++                        android:id="@+id/checkBoxDiesel"
++                        android:layout_width="69dp"
++                        android:layout_height="24dp"
++                        android:layout_marginTop="36dp"
++                        android:text="Diesel"
++                        android:textSize="12dp"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.658"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
++
++                    <CheckBox
++                        android:id="@+id/checkBoxLpg"
++                        android:layout_width="69dp"
++                        android:layout_height="24dp"
++                        android:layout_marginTop="36dp"
++                        android:text="LPG"
++                        android:textSize="12dp"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.942"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
++
++                    <EditText
++                        android:id="@+id/editTextFuel"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:ems="10"
++                        android:gravity="center"
++                        android:hint=" consumption"
++                        android:inputType="number"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.731"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        app:layout_constraintVertical_bias="0.771"
++                        tools:ignore="TouchTargetSizeCheck" />
++
++
++                </androidx.constraintlayout.widget.ConstraintLayout>
++
++            </androidx.cardview.widget.CardView>
++
++            <!-- Monthly air travel card view -->
++
++            <androidx.cardview.widget.CardView
++                android:layout_width="match_parent"
++                android:layout_height="150dp"
++                app:cardCornerRadius="24dp"
++                android:layout_margin="16dp"
++                android:backgroundTint="#A5BEFF">
++
++                <androidx.constraintlayout.widget.ConstraintLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="150dp">
++
++                    <ImageView
++                        android:layout_width="101dp"
++                        android:layout_height="101dp"
++                        android:src="@drawable/airtravel"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        app:layout_constraintVertical_bias="0.673" />
++
++                    <TextView
++                        android:layout_width="329dp"
++                        android:layout_height="21dp"
++                        android:gravity="center"
++                        android:text="Your monthly air travel"
++                        android:textColor="@color/black"
++                        android:textSize="17dp"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <CheckBox
++                        android:id="@+id/checkBoxTravelAir"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginTop="32dp"
++                        android:text="I haven't traveled by plane this month"
++                        android:textSize="12dp"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.918"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        tools:ignore="TextSizeCheck" />
++
++                    <EditText
++                        android:id="@+id/editTextAirTravel"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginBottom="16dp"
++                        android:ems="10"
++                        android:inputType="number"
++                        android:minHeight="48dp"
++                        android:hint="consumption"
++                        android:gravity="center"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.731"
++                        app:layout_constraintStart_toStartOf="parent"
++                        tools:ignore="SpeakableTextPresentCheck" />
++
++
++                </androidx.constraintlayout.widget.ConstraintLayout>
++            </androidx.cardview.widget.CardView>
++
++            <!-- Monthly train journey card view -->
++
++            <androidx.cardview.widget.CardView
++                android:layout_width="match_parent"
++                android:layout_height="150dp"
++                android:layout_margin="16dp"
++                app:cardCornerRadius="24dp"
++                android:backgroundTint="#A5BEEF">
++
++                <androidx.constraintlayout.widget.ConstraintLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="150dp">
++
++                    <ImageView
++                        android:layout_width="101dp"
++                        android:layout_height="101dp"
++                        android:layout_marginTop="24dp"
++                        android:src="@drawable/train"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <TextView
++                        android:layout_width="332dp"
++                        android:layout_height="39dp"
++                        android:gravity="center"
++                        android:text="Your monthly train journey"
++                        android:textSize="17dp"
++                        android:textColor="@color/black"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <CheckBox
++                        android:id="@+id/checkBoxTravelTrain"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginTop="24dp"
++                        android:text="I haven't traveled by train this month"
++                        android:textSize="13dp"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.836"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        tools:ignore="TextSizeCheck" />
++
++                    <EditText
++                        android:id="@+id/editTextTrainTravel"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:ems="10"
++                        android:gravity="center"
++                        android:hint="consumption"
++                        android:inputType="number"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.731"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent"
++                        app:layout_constraintVertical_bias="0.761"
++                        tools:ignore="TouchTargetSizeCheck" />
++
++
++                </androidx.constraintlayout.widget.ConstraintLayout>
++            </androidx.cardview.widget.CardView>
++
++            <!-- Monthly meat consumption card view -->
++
++            <androidx.cardview.widget.CardView
++                android:layout_width="match_parent"
++                android:layout_height="150dp"
++                app:cardCornerRadius="24dp"
++                android:layout_margin="16dp"
++                android:backgroundTint="#A5BEFF">
++
++                <androidx.constraintlayout.widget.ConstraintLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="150dp">
++
++                    <ImageView
++                        android:layout_width="101dp"
++                        android:layout_height="101dp"
++                        android:src="@drawable/meat"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <TextView
++                        android:id="@+id/textView27"
++                        android:layout_width="339dp"
++                        android:layout_height="35dp"
++                        android:gravity="center"
++                        android:textSize="17dp"
++                        android:text="Our monthly meat consumption"
++                        android:textColor="@color/black"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <CheckBox
++                        android:id="@+id/checkBoxMeat"
++                        android:layout_width="190dp"
++                        android:layout_height="29dp"
++                        android:layout_marginTop="32dp"
++                        android:text="I do not consume meat"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.643"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="@+id/textView27"
++                        tools:ignore="TouchTargetSizeCheck" />
++
++                    <EditText
++                        android:id="@+id/editTextMeaat"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginBottom="24dp"
++                        android:ems="10"
++                        android:inputType="number"
++                        android:hint="consumption"
++                        android:gravity="center"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.731"
++                        app:layout_constraintStart_toStartOf="parent"
++                        tools:ignore="TouchTargetSizeCheck" />
++
++                </androidx.constraintlayout.widget.ConstraintLayout>
++
++            </androidx.cardview.widget.CardView>
++
++            <!-- Monthly milk consumption card view -->
++
++            <androidx.cardview.widget.CardView
++                android:layout_width="match_parent"
++                android:layout_height="150dp"
++                android:layout_margin="16dp"
++                app:cardCornerRadius="24dp"
++                android:backgroundTint="#A5BEFF">
++
++                <androidx.constraintlayout.widget.ConstraintLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="150dp">
++
++                    <ImageView
++                        android:layout_width="101dp"
++                        android:layout_height="101dp"
++                        android:src="@drawable/milk"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <TextView
++                        android:layout_width="339dp"
++                        android:layout_height="35dp"
++                        android:gravity="center"
++                        android:textSize="17dp"
++                        android:text="Your monthly milk consumption"
++                        android:textColor="@color/black"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <EditText
++                        android:id="@+id/editTextMilk"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginBottom="24dp"
++                        android:ems="10"
++                        android:inputType="number"
++                        android:hint="consumption"
++                        android:gravity="center"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.731"
++                        app:layout_constraintStart_toStartOf="parent"
++                        tools:ignore="TouchTargetSizeCheck" />
++
++                </androidx.constraintlayout.widget.ConstraintLayout>
++            </androidx.cardview.widget.CardView>
++
++            <!-- Monthly fruit and vegetable consumption card view -->
++
++            <androidx.cardview.widget.CardView
++                android:layout_width="match_parent"
++                android:layout_height="150dp"
++                android:layout_margin="16dp"
++                app:cardCornerRadius="24dp"
++                android:backgroundTint="#A5BEFF">
++
++                <androidx.constraintlayout.widget.ConstraintLayout
++                    android:layout_width="match_parent"
++                    android:layout_height="150dp">
++
++                    <ImageView
++                        android:layout_width="101dp"
++                        android:layout_height="101dp"
++                        android:src="@drawable/vegatable"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <TextView
++                        android:layout_width="339dp"
++                        android:layout_height="35dp"
++                        android:gravity="center"
++                        android:textSize="17dp"
++                        android:text="Monthly fruit and vegetable consumption"
++                        android:textColor="@color/black"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintStart_toStartOf="parent"
++                        app:layout_constraintTop_toTopOf="parent" />
++
++                    <EditText
++                        android:id="@+id/editTextVegatablesFruits"
++                        android:layout_width="wrap_content"
++                        android:layout_height="wrap_content"
++                        android:layout_marginBottom="24dp"
++                        android:ems="10"
++                        android:inputType="number"
++                        android:hint="consumption"
++                        android:gravity="center"
++                        app:layout_constraintBottom_toBottomOf="parent"
++                        app:layout_constraintEnd_toEndOf="parent"
++                        app:layout_constraintHorizontal_bias="0.731"
++                        app:layout_constraintStart_toStartOf="parent"
++                        tools:ignore="TouchTargetSizeCheck" />
++
++                </androidx.constraintlayout.widget.ConstraintLayout>
++
++            </androidx.cardview.widget.CardView>
++
++            <Button
++                android:layout_width="match_parent"
++                android:layout_height="match_parent"
++                android:onClick="calculate"
++                android:text="CALCULATE"
++                android:backgroundTint="#A5BEFF"/>
++
++
++        </LinearLayout>
++
++    </ScrollView>
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/values/themes.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/themes.xml b/app/src/main/res/values/themes.xml
+new file mode 100644
+--- /dev/null	(date 1716371196356)
++++ b/app/src/main/res/values/themes.xml	(date 1716371196356)
+@@ -0,0 +1,9 @@
++<resources xmlns:tools="http://schemas.android.com/tools">
++    <!-- Base application theme. -->
++    <style name="Base.Theme.SAİ" parent="Theme.Material3.DayNight.NoActionBar">
++        <!-- Customize your light theme here. -->
++        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
++    </style>
++
++    <style name="Theme.SAİ" parent="Base.Theme.SAİ" />
++</resources>
+\ No newline at end of file
+Index: app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_launcher_background.xml b/app/src/main/res/drawable/ic_launcher_background.xml
+new file mode 100644
+--- /dev/null	(date 1713125817060)
++++ b/app/src/main/res/drawable/ic_launcher_background.xml	(date 1713125817060)
+@@ -0,0 +1,170 @@
++<?xml version="1.0" encoding="utf-8"?>
++<vector xmlns:android="http://schemas.android.com/apk/res/android"
++    android:width="108dp"
++    android:height="108dp"
++    android:viewportWidth="108"
++    android:viewportHeight="108">
++    <path
++        android:fillColor="#3DDC84"
++        android:pathData="M0,0h108v108h-108z" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M9,0L9,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,0L19,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,0L29,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,0L39,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,0L49,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,0L59,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,0L69,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,0L79,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M89,0L89,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M99,0L99,108"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,9L108,9"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,19L108,19"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,29L108,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,39L108,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,49L108,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,59L108,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,69L108,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,79L108,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,89L108,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M0,99L108,99"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,29L89,29"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,39L89,39"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,49L89,49"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,59L89,59"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,69L89,69"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M19,79L89,79"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M29,19L29,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M39,19L39,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M49,19L49,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M59,19L59,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M69,19L69,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++    <path
++        android:fillColor="#00000000"
++        android:pathData="M79,19L79,89"
++        android:strokeWidth="0.8"
++        android:strokeColor="#33FFFFFF" />
++</vector>

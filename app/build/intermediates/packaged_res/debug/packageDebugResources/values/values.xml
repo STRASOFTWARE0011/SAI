@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="elect">#B7D7E3</color>
+    <color name="ulasim">#5094D5</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="ısınma">#F85153</color>
+    <dimen name="fab_margin">16dp</dimen>
+    <string name="Main_title" translatable="false">What Is a Carbon Footprint?</string>
+    <string name="app_name">SAİ</string>
+    <string name="calculation" translatable="false">Calculation</string>
+    <string name="eat_carbon_footprint" translatable="false">EAT CARBON FOOTPRINT</string>
+    <string name="electric_carbon_footprint" translatable="false">ELECTRIC CARBON FOOTPRINT</string>
+    <string name="first_fragment_label" translatable="false">İlk Fragment Başlığı</string>
+    <string name="fuel_carbon_footprint" translatable="false">FUEL CARBON FOOTPRINT</string>
+    <string name="history" translatable="false">History</string>
+    <string name="long_answer_title" translatable="false">A carbon footprint is a measure of the total amount of greenhouse gases, primarily carbon dioxide, that are emitted directly or indirectly by human activities. Understanding the carbon footprint is crucial as it helps to assess the impact of individual or organizational actions on climate change. The importance of reducing one\'s carbon footprint lies in mitigating global warming and its associated effects, such as extreme weather events, sea level rise, and loss of biodiversity. Various factors contribute to a carbon footprint, including energy consumption, transportation choices, diet, and waste generation. For instance, using fossil fuels for electricity, heating, and transportation significantly increases carbon emissions. Similarly, high meat consumption and food waste are major contributors to a larger carbon footprint. By adopting sustainable practices such as using renewable energy, opting for public transport or carpooling, and reducing meat intake, individuals and organizations can effectively lower their carbon footprint and contribute to a healthier planet.
+    <string name="calculation">Calculation</string>"
+
+
+
+</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="settings" translatable="false">Settings</string>
+    <string name="short_answer" translatable="false"> A “carbon footprint” is shorthand for all of a person or organization’s greenhouse gas emissions that contribute to climate change.</string>
+    <string name="short_answer_title" translatable="false">The short answer:</string>
+    <string name="travel_carbon_footprint" translatable="false">TRAVEL CARBON FOOTPRINT</string>
+    <string name="warming_carbon_footprint" translatable="false">WARMING CARBON FOOTPRINT</string>
+    <string name="what_footprint" translatable="false">what Footprint</string>
+    <string name="your_total_carbon_footprint" translatable="false">YOUR TOTAL CARBON FOOTPRINT</string>
+    <style name="Base.Theme.SAİ" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.SAİ" parent="Base.Theme.SAİ"/>
+</resources>
