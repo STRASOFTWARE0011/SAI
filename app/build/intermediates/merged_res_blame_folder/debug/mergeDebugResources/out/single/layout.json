@@ -1,30 +1,54 @@
 [
     {
-        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-mergeDebugResources-42:\\layout\\activity_conclusion.xml",
-        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-main-45:\\layout\\activity_conclusion.xml"
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\button_layout.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\button_layout.xml"
     },
     {
-        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-mergeDebugResources-42:\\layout\\calculation.xml",
-        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-main-45:\\layout\\calculation.xml"
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\test_activty.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\test_activty.xml"
     },
     {
-        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-mergeDebugResources-42:\\layout\\history.xml",
-        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-main-45:\\layout\\history.xml"
+        "merged": "com.example.sa.app-mergeDebugResources-42:/layout/activty_what_footprint.xml",
+        "source": "com.example.sa.app-main-45:/layout/activty_what_footprint.xml"
     },
     {
-        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-mergeDebugResources-42:\\layout\\settings.xml",
-        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-main-45:\\layout\\settings.xml"
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\history_foot_print.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\history_foot_print.xml"
+    },
+    {
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\activity_beginning.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\activity_beginning.xml"
+    },
+    {
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\activity_ana_sayfa.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\activity_ana_sayfa.xml"
+    },
+    {
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\activity_sonuc.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\activity_sonuc.xml"
+    },
+    {
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\calculation.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\calculation.xml"
+    },
+    {
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\activity_conclusion.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\activity_conclusion.xml"
     },
     {
         "merged": "com.example.sa.app-mergeDebugResources-42:/layout/activity_ana_sayfa.xml",
         "source": "com.example.sa.app-main-45:/layout/activity_ana_sayfa.xml"
     },
     {
-        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-mergeDebugResources-42:\\layout\\activity_ana_sayfa.xml",
-        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-main-45:\\layout\\activity_ana_sayfa.xml"
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\history.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\history.xml"
     },
     {
-        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-mergeDebugResources-42:\\layout\\what_carbon_footprint.xml",
-        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.4\\com.example.sa.app-main-45:\\layout\\what_carbon_footprint.xml"
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\what_carbon_footprint.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\what_carbon_footprint.xml"
+    },
+    {
+        "merged": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-mergeDebugResources-42:\\layout\\activty_test2.xml",
+        "source": "C:\\Users\\stars\\.gradle\\daemon\\8.7\\com.example.sa.app-main-45:\\layout\\activty_test2.xml"
     }
 ]

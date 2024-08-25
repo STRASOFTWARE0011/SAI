@@ -8,6 +8,8 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <permission
         android:name="com.example.sa.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -28,7 +30,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.SAİ" >
         <activity
-            android:name="com.example.sa.AnaSayfa"
+            android:name="com.example.sa.HomePage"
             android:exported="true"
             android:theme="@style/Theme.SAİ" >
             <intent-filter>
@@ -38,16 +40,19 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.example.sa.Beginning"
+            android:exported="false" />
+        <activity
+            android:name="com.example.sa.whatFootprint"
+            android:exported="false" />
+        <activity
             android:name="com.example.sa.Calculation"
             android:exported="false" />
         <activity
             android:name="com.example.sa.Conclusion"
             android:exported="false" />
         <activity
-            android:name="com.example.sa.History"
-            android:exported="false" />
-        <activity
-            android:name="com.example.sa.WhatCarbonFootPrint"
+            android:name="com.example.sa.HistoryFootPrint"
             android:exported="false" />
 
         <provider

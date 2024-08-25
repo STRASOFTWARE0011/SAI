@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="elect">#B7D7E3</color>
+    <color name="ısınma">#F85153</color>
+    <color name="ulasim">#5094D5</color>
+    <color name="table_row_date_bg">#A5BEFF</color>
+    <color name="table_row_footprint_bg">#FFFFFF</color>
+</resources>

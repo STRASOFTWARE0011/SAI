@@ -4,7 +4,17 @@
             "outputFile": "com.example.sa.app-mergeDebugResources-41:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\stars\\.gradle\\caches\\transforms-3\\5bef754f6565842dc4108da06ac1e010\\transformed\\material-1.10.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\stars\\.gradle\\caches\\transforms-4\\1b4135fd1c1d005579da3879abfbd00d\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\stars\\.gradle\\caches\\transforms-4\\af56ae7366d8b84ea3b5c542d29cfafa\\transformed\\material-1.10.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,26,35,40",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,23 +33,13 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\stars\\.gradle\\caches\\transforms-3\\ae84d8aca42a81dfd99e3005da004281\\transformed\\appcompat-1.6.1\\res\\values-land\\values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,125,196",
-                        "endColumns": "69,70,67",
-                        "endOffsets": "120,191,259"
-                    }
-                },
-                {
                     "source": "C:\\Users\\stars\\AndroidStudioProjects\\SA\\app\\src\\main\\res\\values-land\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "16",
+                        "startOffsets": "17",
                         "endColumns": "41",
-                        "endOffsets": "53"
+                        "endOffsets": "54"
                     },
                     "to": {
                         "startLines": "5",

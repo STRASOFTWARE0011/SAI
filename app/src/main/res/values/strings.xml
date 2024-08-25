@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">SAİ</string>
+
+    <string name="select_country">Select Country</string>
+    <string name="select_energy_type">Select Energy Type</string>
+    <string name="enter_usage">Enter Usage</string>
+    <string name="calculate">Calculate</string>
+    <string name="result_text">Your carbon footprint: %.2f kg CO2</string>
+
+
+
+    <string name="first_fragment_label" translatable="false">İlk Fragment Başlığı</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
+
+    <string-array name="electric_types">
+        <item>Solar</item>
+        <item>Coal</item>
+        <item>Barrage</item>
+    </string-array>
+
+    <string-array name="Heating_types">
+        <item>Electric</item>
+        <item>Coal</item>
+        <item>Natural Gas</item>
+    </string-array>
+
+    <string-array name="Vehicle_types">
+        <item>Disel</item>
+        <item>LPG</item>
+        <item>Gasolina</item>
+    </string-array>
+
+    <string-array name="Foods">
+        <item>Red</item>
+        <item>Chicken</item>
+        <item>Milk</item>
+        <item>Fruits</item>
+    </string-array>
+
+    <string name="Main_title" translatable="false">What Is a Carbon Footprint?</string>
+    <string name="short_answer_title" translatable="false">The short answer:</string>
+    <string name="short_answer" translatable="false"> A “carbon footprint” is shorthand for all of a person or organization’s greenhouse
+        gas emissions that contribute to climate change.</string>
+    <string name="long_answer_title" translatable="false">A carbon footprint is a measure of the total amount of greenhouse gases,
+        primarily carbon dioxide, that are emitted directly or indirectly by human activities. Understanding the carbon footprint is
+        crucial as it helps to assess the impact of individual or organizational actions on climate change. The importance of reducing
+        one\'s carbon footprint lies in mitigating global warming and its associated effects, such as extreme weather events,
+        sea level rise, and loss of biodiversity. Various factors contribute to a carbon footprint, including energy consumption,
+        transportation choices, diet, and waste generation. For instance, using fossil fuels for electricity, heating, and transportation
+        significantly increases carbon emissions. Similarly, high meat consumption and food waste are major contributors to a larger carbon
+        footprint. By adopting sustainable practices such as using renewable energy, opting for public transport or carpooling, and reducing
+        meat intake, individuals and organizations can effectively lower their carbon footprint and contribute to a healthier planet.
+    <string name="calculation">Calculation</string>"
+
+</string>
+    <string name="settings" translatable="false">Settings</string>
+    <string name="what_footprint" translatable="false">what Footprint</string>
+    <string name="calculation" translatable="false">Calculation</string>
+    <string name="history" translatable="false">History</string>
+
+    <string name="electric_carbon_footprint" translatable="false">ELECTRIC CARBON FOOTPRINT</string>
+    <string name="warming_carbon_footprint" translatable="false">WARMING CARBON FOOTPRINT</string>
+    <string name="fuel_carbon_footprint" translatable="false">FUEL CARBON FOOTPRINT</string>
+    <string name="travel_carbon_footprint" translatable="false">TRAVEL CARBON FOOTPRINT</string>
+    <string name="eat_carbon_footprint" translatable="false">EAT CARBON FOOTPRINT</string>
+    <string name="your_total_carbon_footprint" translatable="false">YOUR TOTAL CARBON FOOTPRINT</string>
+    <string name="beginningWarning" > Your countrys emission values will be used in the calculation.You can change this setting from the settings section.</string>
+
+    <string name="electricty_warning" translatable="false">Warning! Your electricity usage results in high levels of CO2 emissions</string>
+    <string name="heating_warning" translatable="false">Warning! Your heating usage results in high levels of CO2 emissions</string>
+    <string name="fuel_warning" translatable="false">Warning! Your fuel usage results in high levels of CO2 emissions</string>
+    <string name="travel_warning" translatable="false">Warning! Your travel usage results in high levels of CO2 emissions</string>
+    <string name="eat_warning" translatable="false">Warning! Your eat usage results in high levels of CO2 emissions</string>
+
+    <string-array name="Electricwarning_array">
+        <item>You can reduce your electricity consumption by using energy-efficient devices such as LED bulbs and energy-saving white goods.</item>
+        <item>Turn off or unplug electronic devices that you are not using. Even in standby mode, devices consume energy.</item>
+        <item>If possible, take advantage of renewable energy sources by installing solar panels.</item>
+
+    </string-array>
+
+</resources>

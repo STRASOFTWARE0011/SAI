@@ -4,10 +4,11 @@ package com.example.sa.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.sa.R;
@@ -17,102 +18,28 @@ import java.lang.String;
 
 public final class HistoryBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final TextView date1;
+  public final ImageView imageView10;
 
   @NonNull
-  public final TextView date2;
+  public final TextView textView12;
 
   @NonNull
-  public final TextView date3;
+  public final TextView textView13;
 
-  @NonNull
-  public final TextView date4;
-
-  @NonNull
-  public final TextView date5;
-
-  @NonNull
-  public final TextView date6;
-
-  @NonNull
-  public final TextView date7;
-
-  @NonNull
-  public final TextView date8;
-
-  @NonNull
-  public final TextView date9;
-
-  @NonNull
-  public final TextView foothprint1;
-
-  @NonNull
-  public final TextView foothprint2;
-
-  @NonNull
-  public final TextView foothprint3;
-
-  @NonNull
-  public final TextView foothprint4;
-
-  @NonNull
-  public final TextView foothprint5;
-
-  @NonNull
-  public final TextView foothprint6;
-
-  @NonNull
-  public final TextView foothprint7;
-
-  @NonNull
-  public final TextView foothprint8;
-
-  @NonNull
-  public final TextView foothprint9;
-
-  @NonNull
-  public final TextView textView1;
-
-  @NonNull
-  public final TextView textView2;
-
-  private HistoryBinding(@NonNull ConstraintLayout rootView, @NonNull TextView date1,
-      @NonNull TextView date2, @NonNull TextView date3, @NonNull TextView date4,
-      @NonNull TextView date5, @NonNull TextView date6, @NonNull TextView date7,
-      @NonNull TextView date8, @NonNull TextView date9, @NonNull TextView foothprint1,
-      @NonNull TextView foothprint2, @NonNull TextView foothprint3, @NonNull TextView foothprint4,
-      @NonNull TextView foothprint5, @NonNull TextView foothprint6, @NonNull TextView foothprint7,
-      @NonNull TextView foothprint8, @NonNull TextView foothprint9, @NonNull TextView textView1,
-      @NonNull TextView textView2) {
+  private HistoryBinding(@NonNull LinearLayout rootView, @NonNull ImageView imageView10,
+      @NonNull TextView textView12, @NonNull TextView textView13) {
     this.rootView = rootView;
-    this.date1 = date1;
-    this.date2 = date2;
-    this.date3 = date3;
-    this.date4 = date4;
-    this.date5 = date5;
-    this.date6 = date6;
-    this.date7 = date7;
-    this.date8 = date8;
-    this.date9 = date9;
-    this.foothprint1 = foothprint1;
-    this.foothprint2 = foothprint2;
-    this.foothprint3 = foothprint3;
-    this.foothprint4 = foothprint4;
-    this.foothprint5 = foothprint5;
-    this.foothprint6 = foothprint6;
-    this.foothprint7 = foothprint7;
-    this.foothprint8 = foothprint8;
-    this.foothprint9 = foothprint9;
-    this.textView1 = textView1;
-    this.textView2 = textView2;
+    this.imageView10 = imageView10;
+    this.textView12 = textView12;
+    this.textView13 = textView13;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -137,129 +64,25 @@ public final class HistoryBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.date1;
-      TextView date1 = ViewBindings.findChildViewById(rootView, id);
-      if (date1 == null) {
+      id = R.id.imageView10;
+      ImageView imageView10 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView10 == null) {
         break missingId;
       }
 
-      id = R.id.date2;
-      TextView date2 = ViewBindings.findChildViewById(rootView, id);
-      if (date2 == null) {
+      id = R.id.textView12;
+      TextView textView12 = ViewBindings.findChildViewById(rootView, id);
+      if (textView12 == null) {
         break missingId;
       }
 
-      id = R.id.date3;
-      TextView date3 = ViewBindings.findChildViewById(rootView, id);
-      if (date3 == null) {
+      id = R.id.textView13;
+      TextView textView13 = ViewBindings.findChildViewById(rootView, id);
+      if (textView13 == null) {
         break missingId;
       }
 
-      id = R.id.date4;
-      TextView date4 = ViewBindings.findChildViewById(rootView, id);
-      if (date4 == null) {
-        break missingId;
-      }
-
-      id = R.id.date5;
-      TextView date5 = ViewBindings.findChildViewById(rootView, id);
-      if (date5 == null) {
-        break missingId;
-      }
-
-      id = R.id.date6;
-      TextView date6 = ViewBindings.findChildViewById(rootView, id);
-      if (date6 == null) {
-        break missingId;
-      }
-
-      id = R.id.date7;
-      TextView date7 = ViewBindings.findChildViewById(rootView, id);
-      if (date7 == null) {
-        break missingId;
-      }
-
-      id = R.id.date8;
-      TextView date8 = ViewBindings.findChildViewById(rootView, id);
-      if (date8 == null) {
-        break missingId;
-      }
-
-      id = R.id.date9;
-      TextView date9 = ViewBindings.findChildViewById(rootView, id);
-      if (date9 == null) {
-        break missingId;
-      }
-
-      id = R.id.foothprint1;
-      TextView foothprint1 = ViewBindings.findChildViewById(rootView, id);
-      if (foothprint1 == null) {
-        break missingId;
-      }
-
-      id = R.id.foothprint2;
-      TextView foothprint2 = ViewBindings.findChildViewById(rootView, id);
-      if (foothprint2 == null) {
-        break missingId;
-      }
-
-      id = R.id.foothprint3;
-      TextView foothprint3 = ViewBindings.findChildViewById(rootView, id);
-      if (foothprint3 == null) {
-        break missingId;
-      }
-
-      id = R.id.foothprint4;
-      TextView foothprint4 = ViewBindings.findChildViewById(rootView, id);
-      if (foothprint4 == null) {
-        break missingId;
-      }
-
-      id = R.id.foothprint5;
-      TextView foothprint5 = ViewBindings.findChildViewById(rootView, id);
-      if (foothprint5 == null) {
-        break missingId;
-      }
-
-      id = R.id.foothprint6;
-      TextView foothprint6 = ViewBindings.findChildViewById(rootView, id);
-      if (foothprint6 == null) {
-        break missingId;
-      }
-
-      id = R.id.foothprint7;
-      TextView foothprint7 = ViewBindings.findChildViewById(rootView, id);
-      if (foothprint7 == null) {
-        break missingId;
-      }
-
-      id = R.id.foothprint8;
-      TextView foothprint8 = ViewBindings.findChildViewById(rootView, id);
-      if (foothprint8 == null) {
-        break missingId;
-      }
-
-      id = R.id.foothprint9;
-      TextView foothprint9 = ViewBindings.findChildViewById(rootView, id);
-      if (foothprint9 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView1;
-      TextView textView1 = ViewBindings.findChildViewById(rootView, id);
-      if (textView1 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
-        break missingId;
-      }
-
-      return new HistoryBinding((ConstraintLayout) rootView, date1, date2, date3, date4, date5,
-          date6, date7, date8, date9, foothprint1, foothprint2, foothprint3, foothprint4,
-          foothprint5, foothprint6, foothprint7, foothprint8, foothprint9, textView1, textView2);
+      return new HistoryBinding((LinearLayout) rootView, imageView10, textView12, textView13);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

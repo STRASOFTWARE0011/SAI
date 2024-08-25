@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,25 +24,7 @@ public final class CalculationBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final CheckBox checkBoxCoal;
-
-  @NonNull
-  public final CheckBox checkBoxDiesel;
-
-  @NonNull
-  public final CheckBox checkBoxElectricity;
-
-  @NonNull
-  public final CheckBox checkBoxGasolina;
-
-  @NonNull
-  public final CheckBox checkBoxLpg;
-
-  @NonNull
   public final CheckBox checkBoxMeat;
-
-  @NonNull
-  public final CheckBox checkBoxNaturalGas;
 
   @NonNull
   public final CheckBox checkBoxTravelAir;
@@ -74,7 +57,16 @@ public final class CalculationBinding implements ViewBinding {
   public final EditText editTextVegatablesFruits;
 
   @NonNull
+  public final Spinner electricitySpinner;
+
+  @NonNull
+  public final Spinner heatingSpinner;
+
+  @NonNull
   public final ImageView imageView12;
+
+  @NonNull
+  public final ImageView imageView2;
 
   @NonNull
   public final TextView textView25;
@@ -85,25 +77,24 @@ public final class CalculationBinding implements ViewBinding {
   @NonNull
   public final TextView textView27;
 
-  private CalculationBinding(@NonNull ConstraintLayout rootView, @NonNull CheckBox checkBoxCoal,
-      @NonNull CheckBox checkBoxDiesel, @NonNull CheckBox checkBoxElectricity,
-      @NonNull CheckBox checkBoxGasolina, @NonNull CheckBox checkBoxLpg,
-      @NonNull CheckBox checkBoxMeat, @NonNull CheckBox checkBoxNaturalGas,
+  @NonNull
+  public final TextView textView3;
+
+  @NonNull
+  public final Spinner vehicleSpinner;
+
+  private CalculationBinding(@NonNull ConstraintLayout rootView, @NonNull CheckBox checkBoxMeat,
       @NonNull CheckBox checkBoxTravelAir, @NonNull CheckBox checkBoxTravelTrain,
       @NonNull EditText editTextAirTravel, @NonNull EditText editTextElectricity,
       @NonNull EditText editTextFuel, @NonNull EditText editTextHeating,
       @NonNull EditText editTextMeaat, @NonNull EditText editTextMilk,
       @NonNull EditText editTextTrainTravel, @NonNull EditText editTextVegatablesFruits,
-      @NonNull ImageView imageView12, @NonNull TextView textView25, @NonNull TextView textView26,
-      @NonNull TextView textView27) {
+      @NonNull Spinner electricitySpinner, @NonNull Spinner heatingSpinner,
+      @NonNull ImageView imageView12, @NonNull ImageView imageView2, @NonNull TextView textView25,
+      @NonNull TextView textView26, @NonNull TextView textView27, @NonNull TextView textView3,
+      @NonNull Spinner vehicleSpinner) {
     this.rootView = rootView;
-    this.checkBoxCoal = checkBoxCoal;
-    this.checkBoxDiesel = checkBoxDiesel;
-    this.checkBoxElectricity = checkBoxElectricity;
-    this.checkBoxGasolina = checkBoxGasolina;
-    this.checkBoxLpg = checkBoxLpg;
     this.checkBoxMeat = checkBoxMeat;
-    this.checkBoxNaturalGas = checkBoxNaturalGas;
     this.checkBoxTravelAir = checkBoxTravelAir;
     this.checkBoxTravelTrain = checkBoxTravelTrain;
     this.editTextAirTravel = editTextAirTravel;
@@ -114,10 +105,15 @@ public final class CalculationBinding implements ViewBinding {
     this.editTextMilk = editTextMilk;
     this.editTextTrainTravel = editTextTrainTravel;
     this.editTextVegatablesFruits = editTextVegatablesFruits;
+    this.electricitySpinner = electricitySpinner;
+    this.heatingSpinner = heatingSpinner;
     this.imageView12 = imageView12;
+    this.imageView2 = imageView2;
     this.textView25 = textView25;
     this.textView26 = textView26;
     this.textView27 = textView27;
+    this.textView3 = textView3;
+    this.vehicleSpinner = vehicleSpinner;
   }
 
   @Override
@@ -147,45 +143,9 @@ public final class CalculationBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.checkBoxCoal;
-      CheckBox checkBoxCoal = ViewBindings.findChildViewById(rootView, id);
-      if (checkBoxCoal == null) {
-        break missingId;
-      }
-
-      id = R.id.checkBoxDiesel;
-      CheckBox checkBoxDiesel = ViewBindings.findChildViewById(rootView, id);
-      if (checkBoxDiesel == null) {
-        break missingId;
-      }
-
-      id = R.id.checkBoxElectricity;
-      CheckBox checkBoxElectricity = ViewBindings.findChildViewById(rootView, id);
-      if (checkBoxElectricity == null) {
-        break missingId;
-      }
-
-      id = R.id.checkBoxGasolina;
-      CheckBox checkBoxGasolina = ViewBindings.findChildViewById(rootView, id);
-      if (checkBoxGasolina == null) {
-        break missingId;
-      }
-
-      id = R.id.checkBoxLpg;
-      CheckBox checkBoxLpg = ViewBindings.findChildViewById(rootView, id);
-      if (checkBoxLpg == null) {
-        break missingId;
-      }
-
       id = R.id.checkBoxMeat;
       CheckBox checkBoxMeat = ViewBindings.findChildViewById(rootView, id);
       if (checkBoxMeat == null) {
-        break missingId;
-      }
-
-      id = R.id.checkBoxNaturalGas;
-      CheckBox checkBoxNaturalGas = ViewBindings.findChildViewById(rootView, id);
-      if (checkBoxNaturalGas == null) {
         break missingId;
       }
 
@@ -249,9 +209,27 @@ public final class CalculationBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.electricitySpinner;
+      Spinner electricitySpinner = ViewBindings.findChildViewById(rootView, id);
+      if (electricitySpinner == null) {
+        break missingId;
+      }
+
+      id = R.id.heatingSpinner;
+      Spinner heatingSpinner = ViewBindings.findChildViewById(rootView, id);
+      if (heatingSpinner == null) {
+        break missingId;
+      }
+
       id = R.id.imageView12;
       ImageView imageView12 = ViewBindings.findChildViewById(rootView, id);
       if (imageView12 == null) {
+        break missingId;
+      }
+
+      id = R.id.imageView2;
+      ImageView imageView2 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView2 == null) {
         break missingId;
       }
 
@@ -273,11 +251,23 @@ public final class CalculationBinding implements ViewBinding {
         break missingId;
       }
 
-      return new CalculationBinding((ConstraintLayout) rootView, checkBoxCoal, checkBoxDiesel,
-          checkBoxElectricity, checkBoxGasolina, checkBoxLpg, checkBoxMeat, checkBoxNaturalGas,
-          checkBoxTravelAir, checkBoxTravelTrain, editTextAirTravel, editTextElectricity,
-          editTextFuel, editTextHeating, editTextMeaat, editTextMilk, editTextTrainTravel,
-          editTextVegatablesFruits, imageView12, textView25, textView26, textView27);
+      id = R.id.textView3;
+      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
+      if (textView3 == null) {
+        break missingId;
+      }
+
+      id = R.id.vehicleSpinner;
+      Spinner vehicleSpinner = ViewBindings.findChildViewById(rootView, id);
+      if (vehicleSpinner == null) {
+        break missingId;
+      }
+
+      return new CalculationBinding((ConstraintLayout) rootView, checkBoxMeat, checkBoxTravelAir,
+          checkBoxTravelTrain, editTextAirTravel, editTextElectricity, editTextFuel,
+          editTextHeating, editTextMeaat, editTextMilk, editTextTrainTravel,
+          editTextVegatablesFruits, electricitySpinner, heatingSpinner, imageView12, imageView2,
+          textView25, textView26, textView27, textView3, vehicleSpinner);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
